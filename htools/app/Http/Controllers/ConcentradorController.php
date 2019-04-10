@@ -16,8 +16,15 @@ class ConcentradorController extends Controller
     public function index(Request $request){
       if($request){
         $query=trim($request->get('searchText'));
-        $concentradores=DB::table('concentrador')->where('descricao','LIKE', '%'.$query.'%');
+        $concentradores=DB::table('concentrador')
+        ->where('descricao','LIKE', '%'.$query.'%')
+        ->orderBy('cod_concentrador', 'desc')
+        ->paginate(7);
+        return view('estoque.categoria.index',[
+          "concentrador"=>$concentradores,"searchText"=>$query
 
+
+        ]);
 
     }
 
