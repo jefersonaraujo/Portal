@@ -24,7 +24,12 @@ class ConcentradorFormRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'descricao' => 'required|max:50',
+            'nome' => 'required|max:50',
+            'ip' => 'required|max:20',
+            'api_port' => 'required|max:20',
+            'ssh_port' => 'required|max:20',
+            'snmp' => 'required|max:20',
         ];
     }
 }
