@@ -13,7 +13,11 @@ class ConcentradorController extends Controller
 {
     public function __construct(){}
 
-    public function index(){
+    public function index(Request $request){
+      if($request){
+        $query=trim($request->get('searchText'));
+        $concentradores=DB::table('concentrador')->where('descricao','LIKE', '%'.$query.'%');
+
 
     }
 
