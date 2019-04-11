@@ -57,6 +57,7 @@ class ConcentradorController extends Controller
       $concentrador=Concentrador::findOrFail($id);
       $concentrador->descricao=$request->get('descricao');
       $concentrador->update();
+      return Redirect::to('cadastrar/concentrador');
     }
 
     }
@@ -64,6 +65,7 @@ class ConcentradorController extends Controller
       $concentrador=Concentrador::findOrFail($id);
       //$concentrador->descricao=$request->get('descricao');
       $concentrador->update();
+      return Redirect::to('cadastrar/concentrador');
 
     }
 }
