@@ -39,16 +39,31 @@ class ConcentradorController extends Controller
 
     }
 
-    public function show(){
+    public function show($id){
+      return view("cadastrar.concentrador.show",
+      [
+        "concentrador"=>Concentrador::findOrFail($id)
+      ]);
 
     }
-    public function edit(){
+    public function edit($id){
+      return view("cadastrar.concentrador.edit",
+      [
+        "concentrador"=>Concentrador::findOrFail($id)
+      ]);
 
     }
-    public function update(){
+    public function update(ConcentradorFormRequest $request, $id){{
+      $concentrador=Concentrador::findOrFail($id);
+      $concentrador->descricao=$request->get('descricao');
+      $concentrador->update();
+    }
 
     }
-    public function destroy(){
+    public function destroy($id){
+      $concentrador=Concentrador::findOrFail($id);
+      //$concentrador->descricao=$request->get('descricao');
+      $concentrador->update();
 
     }
 }
