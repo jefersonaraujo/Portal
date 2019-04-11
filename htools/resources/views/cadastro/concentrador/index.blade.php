@@ -17,10 +17,21 @@
 					<th>Descrição</th>
 					<th>Opções</th>
 				</thead>
+        @foreach ($concentrador as $con)
+        <tr>
+          <td>{{ $con->cod_concentrador}}</td>
+          <td>{{ $con->descricao}}</td>
+          <td>{{ $con->descricao}}</td>
+          <td>
+            <a href="{{URL::action('ConcentradorController@edit',$con->cod_concentrador)}}"><button class="btn btn-info">Editar</button></a>
+            <a href="" data-target="#modal-delete-{{$con->cod_concentrador}}" data-toggle="modal"><button class="btn btn-danger">Excluir</button></a>
+          </td>
+        </tr>
 
-			</table>
-		</div>
-	
-	</div>
-</div>
-@stop
+        @endforeach
+      </table>
+      </div>
+      {{$concentrador->render()}}
+ </div>
+ </div>
+ @stop

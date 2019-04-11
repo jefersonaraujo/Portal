@@ -162,7 +162,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Sistema de Vendas</h3>
+                  <h3 class="box-title">Htools - Hotspot</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 
@@ -191,9 +191,9 @@
       <!--Fin-Contenido-->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Versão</b> 5.3.0
+          <b>Versão</b> 1.1.0
         </div>
-        <strong>Copyright &copy; 2015-2020 <a href="www.hugocursos.com.br">Q-Cursos</a>.</strong> Todos os direitos reservados.
+        <strong>Copyright &copy; 2015-2020 <a href="www.ineedsolutions.com.br">I Need Solutions</a>.</strong> Todos os direitos reservados.
       </footer>
 
 
