@@ -20,20 +20,20 @@ class ConcentradorController extends Controller
         ->where('descricao','LIKE', '%'.$query.'%')
         ->orderBy('cod_concentrador', 'desc')
         ->paginate(7);
-        return view('estoque.categoria.index',[
+        return view('cadastro.concentrador.index',[
           "concentrador"=>$concentradores,"searchText"=>$query
-
-
         ]);
 
     }
 
 
-    public function create(){
+    public function create("cadastro.concentrador.create"){
 
     }
 
-    public function store(){
+    public function store(ConcentradorFormRequest $request){
+      $concentrador = new Concentrador;
+      $categoria->descricao=$request->get('descricao');
 
     }
 
