@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('estoque/concentrador', 'ConcentradorController');
+Route::resource('cadastro/concentrador', 'ConcentradorController');

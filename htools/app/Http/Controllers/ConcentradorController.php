@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace sistemaLaravel\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use htools\Categoria;
+use sistemaLaravel\Concentrador;
 use Illuminate\Support\Facades\Redirect;
-use htools\Http\Requests\ConcentradorFormRequest;
+use sistemaLaravel\Http\Requests\ConcentradorFormRequest;
 use DB;
 
 class ConcentradorController extends Controller
@@ -16,18 +16,19 @@ class ConcentradorController extends Controller
     public function index(Request $request){
       if($request){
         $query=trim($request->get('searchText'));
-        $concentradores=DB::table('concentrador')
+        $concentradores=DB::table('tb_concentrador')
         ->where('descricao','LIKE', '%'.$query.'%')
         ->orderBy('cod_concentrador', 'desc')
         ->paginate(7);
-        return view('cadastrar.concentrador.index',[
+        return view('cadastro.concentrador.index',[
           "concentrador"=>$concentradores,"searchText"=>$query
         ]);
 
-    }
+    }}
 
 
-    public function create("cadastrar.concentrador.create"){
+    public function create(){
+      return view("cadastro.concentrador.create");
 
     }
 
@@ -35,19 +36,19 @@ class ConcentradorController extends Controller
       $concentrador = new Concentrador;
       $concentrador->descricao=$request->get('descricao');
       $concentrador->save();
-      return Redirect::to('cadastrar/concentrador');
+      return Redirect::to('cadastro/concentrador');
 
     }
 
     public function show($id){
-      return view("cadastrar.concentrador.show",
+      return view("cadastro.concentrador.show",
       [
         "concentrador"=>Concentrador::findOrFail($id)
       ]);
 
     }
     public function edit($id){
-      return view("cadastrar.concentrador.edit",
+      return view("cadastro.concentrador.edit",
       [
         "concentrador"=>Concentrador::findOrFail($id)
       ]);
@@ -57,7 +58,7 @@ class ConcentradorController extends Controller
       $concentrador=Concentrador::findOrFail($id);
       $concentrador->descricao=$request->get('descricao');
       $concentrador->update();
-      return Redirect::to('cadastrar/concentrador');
+      return Redirect::to('cadastro/concentrador');
     }
 
     }
@@ -65,7 +66,7 @@ class ConcentradorController extends Controller
       $concentrador=Concentrador::findOrFail($id);
       //$concentrador->descricao=$request->get('descricao');
       $concentrador->update();
-      return Redirect::to('cadastrar/concentrador');
+      return Redirect::to('cadastro/concentrador');
 
     }
 }
