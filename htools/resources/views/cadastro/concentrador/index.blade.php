@@ -27,7 +27,7 @@
             <a href="" data-target="#modal-delete-{{$con->cod_concentrador}}" data-toggle="modal"><button class="btn btn-danger">Excluir</button></a>
           </td>
         </tr>
-
+        @include('cadastro.concentrador.modal')
         @endforeach
       </table>
       </div>
