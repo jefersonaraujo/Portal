@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Concentrador extends Model
 {
-    protected $table = 'concentrador';
+    protected $table = 'tb_concentrador';
     protected $primarykey = 'cod_concentrador';
 
     public $timestamps = false;
