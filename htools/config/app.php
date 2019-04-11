@@ -175,7 +175,7 @@ return [
         sistemaLaravel\Providers\EventServiceProvider::class,
         sistemaLaravel\Providers\RouteServiceProvider::class,
         //////////////////addd
-        ///Collective\Html\HtmlServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
 
     ],
@@ -228,6 +228,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        //addd
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+
 
     ],
 
