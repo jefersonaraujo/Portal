@@ -25,6 +25,6 @@ class Concentrador extends Model
 
     ];
 
-    protected $guarded[];
+    protected $guarded = [];
 
 }
