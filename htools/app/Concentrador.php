@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Concentrador extends Model
 {
     protected $table = 'tb_concentrador';
-    protected $primarykey = 'cod_concentrador';
+    protected $primaryKey = 'cod_concentrador';
 
     public $timestamps = false;
     protected $fillable = [

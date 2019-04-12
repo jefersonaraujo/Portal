@@ -58,19 +58,27 @@ class ConcentradorController extends Controller
     }
     public function edit($id){
       return view("cadastro.concentrador.edit",
-      [
-        "concentrador"=>Concentrador::findOrFail($id)
-      ]);
+      ["concentrador"=>Concentrador::findOrFail($id)]);
 
     }
-    public function update(ConcentradorFormRequest $request, $id){{
-      $concentrador=Concentrador::findOrFail($id);
-      $concentrador->descricao=$request->get('descricao');
-      $concentrador->update();
+    public function update(ConcentradorFormRequest $request, $id){
+      // $concentrador=Concentrador::findOrFail($id);
+      // $concentrador->descricao=$request->get('descricao');
+      // $concentrador->ip=$request->get('ip');
+      // $concentrador->api_port=$request->get('api_port');
+      // $concentrador->ssh_port=$request->get('ssh_port');
+      // $concentrador->snmp_port=$request->get('snmp_port');
+      // $concentrador->snmp=$request->get('snmp');
+      // $concentrador->latitude=$request->get('latitude');
+      // $concentrador->altitude=$request->get('altitude');
+      // $concentrador->user=$request->get('user');
+      // $concentrador->password=$request->get('password');
+      // $concentrador->update();
+
       return Redirect::to('cadastro/concentrador');
     }
 
-    }
+
     public function destroy($id){
       $concentrador=Concentrador::findOrFail($id);
       //$concentrador->descricao=$request->get('descricao');
