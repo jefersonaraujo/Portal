@@ -14,14 +14,18 @@
 				<thead>
 					<th>Id</th>
 					<th>Nome</th>
-					<th>Descrição</th>
+					<th>Ip</th>
+          <th>Latitude</th>
+          <th>altitude</th>
 					<th>Opções</th>
 				</thead>
         @foreach ($concentrador as $con)
         <tr>
           <td>{{ $con->cod_concentrador}}</td>
           <td>{{ $con->descricao}}</td>
-          <td>{{ $con->descricao}}</td>
+          <td>{{ $con->ip}}</td>
+          <td>{{ $con->latitude}}</td>
+          <td>{{ $con->altitude}}</td>
           <td>
             <a href="{{URL::action('ConcentradorController@edit',$con->cod_concentrador)}}"><button class="btn btn-info">Editar</button></a>
             <a href="" data-target="#modal-delete-{{$con->cod_concentrador}}" data-toggle="modal"><button class="btn btn-danger">Excluir</button></a>

@@ -35,14 +35,15 @@ class ConcentradorController extends Controller
     public function store(ConcentradorFormRequest $request){
       $concentrador = new Concentrador;
       $concentrador->descricao=$request->get('descricao');
-      $concentrador->descricao=$request->get('ip');
-      $concentrador->descricao=$request->get('api_port');
-      $concentrador->descricao=$request->get('ssh_port');
-      $concentrador->descricao=$request->get('snmp_port');
-      $concentrador->descricao=$request->get('snmp');
-      $concentrador->descricao=$request->get('latitude');
-      $concentrador->descricao=$request->get('user');
-      $concentrador->descricao=$request->get('password');
+      $concentrador->ip=$request->get('ip');
+      $concentrador->api_port=$request->get('api_port');
+      $concentrador->ssh_port=$request->get('ssh_port');
+      $concentrador->snmp_port=$request->get('snmp_port');
+      $concentrador->snmp=$request->get('snmp');
+      $concentrador->latitude=$request->get('latitude');
+      $concentrador->altitude=$request->get('altitude');
+      $concentrador->user=$request->get('user');
+      $concentrador->password=$request->get('password');
       $concentrador->save();
       return Redirect::to('cadastro/concentrador');
 
