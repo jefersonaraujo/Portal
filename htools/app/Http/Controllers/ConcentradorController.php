@@ -18,6 +18,7 @@ class ConcentradorController extends Controller
         $query=trim($request->get('searchText'));
         $concentradores=DB::table('tb_concentrador')
         ->where('descricao','LIKE', '%'.$query.'%')
+        ->where('ativo', '1')
         ->orderBy('cod_concentrador', 'desc')
         ->paginate(7);
         return view('cadastro.concentrador.index',[
@@ -44,7 +45,7 @@ class ConcentradorController extends Controller
       $concentrador->altitude=$request->get('altitude');
       $concentrador->user=$request->get('user');
       $concentrador->password=$request->get('password');
-      $concentrador->ativo=$request->get('ativo');
+      $concentrador->ativo=1;
       $concentrador->save();
       return Redirect::to('cadastro/concentrador');
 
@@ -74,7 +75,7 @@ class ConcentradorController extends Controller
       $concentrador->altitude=$request->get('altitude');
       $concentrador->user=$request->get('user');
       $concentrador->password=$request->get('password');
-      $concentrador->ativo=$request->get('ativo');
+      ///$concentrador->ativo=$request->get('ativo');
       $concentrador->update();
 
       return Redirect::to('cadastro/concentrador');
@@ -83,7 +84,7 @@ class ConcentradorController extends Controller
 
     public function destroy($id){
       $concentrador=Concentrador::findOrFail($id);
-      //$concentrador->descricao=$request->get('descricao');
+      $concentrador->ativo=0;
       $concentrador->update();
       return Redirect::to('cadastro/concentrador');
 
