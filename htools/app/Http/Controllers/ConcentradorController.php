@@ -44,6 +44,7 @@ class ConcentradorController extends Controller
       $concentrador->altitude=$request->get('altitude');
       $concentrador->user=$request->get('user');
       $concentrador->password=$request->get('password');
+      $concentrador->ativo=$request->get('ativo');
       $concentrador->save();
       return Redirect::to('cadastro/concentrador');
 
@@ -73,6 +74,7 @@ class ConcentradorController extends Controller
       $concentrador->altitude=$request->get('altitude');
       $concentrador->user=$request->get('user');
       $concentrador->password=$request->get('password');
+      $concentrador->ativo=$request->get('ativo');
       $concentrador->update();
 
       return Redirect::to('cadastro/concentrador');

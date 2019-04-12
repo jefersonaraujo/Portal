@@ -21,7 +21,8 @@ class Concentrador extends Model
       'latitude',
       'altitude',
       'user',
-      'password'
+      'password',
+      'ativo'
 
     ];
 

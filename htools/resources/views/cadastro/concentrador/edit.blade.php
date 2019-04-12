@@ -56,6 +56,11 @@
               <input type="password" name="password"  value=" {{ $concentrador->password }}" class="form-control" placeholder="Password MK...">
             </div>
 
+						<div class="form-group">
+              <label for="ativo">Ativo</label>
+              <input type="text" name="ativo"  value=" {{ $concentrador->ativo }}" class="form-control" placeholder="Password MK...">
+            </div>
+
             <div class="form-group">
             	<button class="btn btn-primary" type="submit">Salvar</button>
             	<button class="btn btn-danger" type="reset">Cancelar</button>
