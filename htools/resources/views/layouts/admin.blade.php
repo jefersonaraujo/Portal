@@ -42,30 +42,27 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
+              <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                  </a>
 
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <small class="bg-red">Online</small>
-                  <span class="hidden-xs">Jeferson A.</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                         onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                      </a>
 
-                    <p>
-                        Htools
-                      <small>www.youtube.com/tutoriais01</small>
-                    </p>
-                  </li>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
+                  </div>
+              </li>
+
 
                   <!-- Menu Footer-->
-                  <li class="user-footer">
 
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Fechar</a>
-                    </div>
-                  </li>
                 </ul>
               </li>
 
@@ -206,6 +203,6 @@
 
     <!-- <script src="{{asset('js/jquery.min.js')}}"></script> -->
 
-    
+
   </body>
 </html>
