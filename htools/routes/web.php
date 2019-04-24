@@ -16,6 +16,7 @@
 // });
 
 Route::resource('cadastro/concentrador', 'ConcentradorController');
+Route::resource('callcenter/agent', 'AgentController');
 
 Auth::routes();
 
