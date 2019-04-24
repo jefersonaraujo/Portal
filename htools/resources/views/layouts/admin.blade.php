@@ -116,6 +116,7 @@
               <a href="#">
                 <i class="fa fa-file-pdf-o"></i>
                 <span>Relatorios</span>
+                <small class="label pull-right bg-red">PDF</small>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
