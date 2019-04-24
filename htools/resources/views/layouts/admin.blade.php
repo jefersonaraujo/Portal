@@ -95,9 +95,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="pabx/Ramais"><i class="fa fa-circle-o"></i> Ramais</a></li>
-                <li><a href="pabx/Chamadas"><i class="fa fa-circle-o"></i> Chamadas</a></li>
-                <li><a href="pabx/Ramais"><i class="fa fa-circle-o"></i> Monitoramento de Ramais</a></li>
+                <li><a href="pabx/ramais"><i class="fa fa-circle-o"></i> Ramais</a></li>
+                <li><a href="pabx/chamadas"><i class="fa fa-circle-o"></i> Chamadas</a></li>
+                <li><a href="pabx/MRamais"><i class="fa fa-circle-o"></i> Monitoramento de Ramais</a></li>
               </ul>
             </li>
 
@@ -110,6 +110,7 @@
               <ul class="treeview-menu">
                 <li><a href="compras/entrada"><i class="fa fa-circle-o"></i> Entradas</a></li>
                 <li><a href="compras/fornecedor"><i class="fa fa-circle-o"></i> Fornecedores</a></li>
+                <li><a href="callcenter/agent"><i class="fa fa-circle-o"></i> Agent</a></li>
               </ul>
             </li>
             <li class="treeview">
