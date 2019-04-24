@@ -34,9 +34,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>H</b>T</span>
+          <span class="logo-mini"><b>PB</b>X</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>HTOOLS</b></span>
+          <span class="logo-lg"><b>PBXTOOLS</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -91,12 +91,12 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>Estoque</span>
+                <span>PABX IP</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="estoque/produto"><i class="fa fa-circle-o"></i> Produtos</a></li>
-                <li><a href="estoque/categoria"><i class="fa fa-circle-o"></i> Categorias</a></li>
+                <li><a href="pabx/Ramais"><i class="fa fa-circle-o"></i> Produtos</a></li>
+                <li><a href="pabx/Chamadas"><i class="fa fa-circle-o"></i> Categorias</a></li>
               </ul>
             </li>
 
