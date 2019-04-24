@@ -95,15 +95,16 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="pabx/Ramais"><i class="fa fa-circle-o"></i> Produtos</a></li>
-                <li><a href="pabx/Chamadas"><i class="fa fa-circle-o"></i> Categorias</a></li>
+                <li><a href="pabx/Ramais"><i class="fa fa-circle-o"></i> Ramais</a></li>
+                <li><a href="pabx/Chamadas"><i class="fa fa-circle-o"></i> Chamadas</a></li>
+                <li><a href="pabx/Ramais"><i class="fa fa-circle-o"></i> Monitoramento de Ramais</a></li>
               </ul>
             </li>
 
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Compras</span>
+                <span>CallCenter</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -113,8 +114,8 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Vendas</span>
+                <i class="fa fa-file-pdf-o"></i>
+                <span>Relatorios</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
