@@ -18,6 +18,9 @@
 Route::resource('cadastro/concentrador', 'ConcentradorController');
 Route::resource('callcenter/agent', 'AgentController');
 Route::resource('pabx/chamadas', 'ChamadasController');
+Route::resource('pabx/abandonadas', 'AbandonadasController');
+
+
 
 Auth::routes();
 

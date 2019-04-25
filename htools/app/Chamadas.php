@@ -25,4 +25,3 @@ class Chamadas extends Model
 
   protected $guarded = [];
 }
-}
