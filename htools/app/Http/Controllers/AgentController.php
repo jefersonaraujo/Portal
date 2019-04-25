@@ -24,9 +24,6 @@ class AgentController extends Controller
         "agent"=>$agentes,"searchText"=>$query
       ]);
     }
-<<<<<<< HEAD
-=======
-  }
->>>>>>> 848e7e4b0e92264bff0662410a283cb064837a53
 
+  }
 }
