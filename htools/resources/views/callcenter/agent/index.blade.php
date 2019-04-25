@@ -14,28 +14,24 @@
 				<thead>
 					<th>Id</th>
 					<th>Nome</th>
-					<th>Ip</th>
-          <th>Latitude</th>
-          <th>altitude</th>
-					<th>Opções</th>
+          <th>Pass</th>
+          <th>Status</th>
+
 				</thead>
-        @foreach ($concentrador as $con)
+        @foreach ($agent as $ag)
         <tr>
-          <td>{{ $con->cod_concentrador}}</td>
-          <td>{{ $con->descricao}}</td>
-          <td>{{ $con->ip}}</td>
-          <td>{{ $con->latitude}}</td>
-          <td>{{ $con->altitude}}</td>
-          <td>
-            <a href="{{URL::action('ConcentradorController@edit',$con->cod_concentrador)}}"><button class="btn btn-info">Editar</button></a>
-            <a href="" data-target="#modal-delete-{{$con->cod_concentrador}}" data-toggle="modal"><button class="btn btn-danger">Excluir</button></a>
-          </td>
+          <td>{{ $ag->number}}</td>
+          <td>{{ $ag->name}}</td>
+          <td>{{ $ag->password}}</td>
+          <td>{{ $ag->estatus}}</td>
+
+
         </tr>
-        @include('cadastro.concentrador.modal')
+  		
         @endforeach
       </table>
       </div>
-      {{$concentrador->render()}}
+      {{$agent->render()}}
  </div>
  </div>
  @stop

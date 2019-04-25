@@ -23,6 +23,7 @@ class AgentController extends Controller
       return view('callcenter.agent.index',[
         "agent"=>$agentes,"searchText"=>$query
       ]);
+    }
 
 }
 }
