@@ -2,8 +2,8 @@
 @section('conteudo')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Lista de Categorias <a href="concentrador/create"><button class="btn btn-success">Novo</button></a></h3>
-		@include('cadastro.concentrador.search')
+		<h3>Lista de Categorias <a href="callcenter/agent"><button class="btn btn-success">Novo</button></a></h3>
+		@include('pabx.ramais.search')
 	</div>
 </div>
 
@@ -16,26 +16,22 @@
 					<th>Nome</th>
 					<th>Ip</th>
           <th>Latitude</th>
-          <th>altitude</th>
+
 					<th>Opções</th>
 				</thead>
-        @foreach ($concentrador as $con)
+        @foreach ($agent as $ag)
         <tr>
-          <td>{{ $con->cod_concentrador}}</td>
-          <td>{{ $con->descricao}}</td>
-          <td>{{ $con->ip}}</td>
-          <td>{{ $con->latitude}}</td>
-          <td>{{ $con->altitude}}</td>
-          <td>
-            <a href="{{URL::action('ConcentradorController@edit',$con->cod_concentrador)}}"><button class="btn btn-info">Editar</button></a>
-            <a href="" data-target="#modal-delete-{{$con->cod_concentrador}}" data-toggle="modal"><button class="btn btn-danger">Excluir</button></a>
-          </td>
+          <td>{{ $ag->id}}</td>
+          <td>{{ $ag->name}}</td>
+          <td>{{ $ag->password}}</td>
+          <td>{{ $ag->estatus}}</td>
+
         </tr>
-        @include('cadastro.concentrador.modal')
+
         @endforeach
       </table>
       </div>
-      {{$concentrador->render()}}
+      {{$agent->render()}}
  </div>
  </div>
  @stop
