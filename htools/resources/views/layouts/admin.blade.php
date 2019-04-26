@@ -32,7 +32,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>PB</b>X</span>
           <!-- logo for regular state and mobile devices -->
@@ -42,7 +42,7 @@
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <a href="{{ url('/') }}" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Navegação</span>
           </a>
           <!-- Navbar Right Menu -->
@@ -97,6 +97,7 @@
               <ul class="treeview-menu">
                 <li><a href="pabx/ramais"><i class="fa fa-circle-o"></i> Ramais</a></li>
                 <li><a href="pabx/chamadas"><i class="fa fa-circle-o"></i> Chamadas</a></li>
+                <li><a href="pabx/abandonadas"><i class="fa fa-circle-o"></i> Abandonadas</a></li>
                 <li><a href="pabx/MRamais"><i class="fa fa-circle-o"></i> Monitoramento de Ramais</a></li>
               </ul>
             </li>
@@ -108,9 +109,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="compras/entrada"><i class="fa fa-circle-o"></i> Entradas</a></li>
-                <li><a href="compras/fornecedor"><i class="fa fa-circle-o"></i> Fornecedores</a></li>
                 <li><a href="callcenter/agent"><i class="fa fa-circle-o"></i> Agent</a></li>
+                <li><a href="callcenter/pausas"><i class="fa fa-circle-o"></i> Pausas</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -121,8 +121,9 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="vendas/venda"><i class="fa fa-circle-o"></i> Vendas</a></li>
-                <li><a href="vendas/cliente"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                <li><a href="chamadas/report_all"><i class="fa fa-circle-o"></i> Chamadas</a></li>
+                <li><a href="chamadas/report_agent"><i class="fa fa-circle-o"></i>Chamadas Agent</a></li>
+                <li><a href="chamadas/report_pausa"><i class="fa fa-circle-o"></i>Pausas Acumuladas</a></li>
               </ul>
             </li>
 
@@ -133,15 +134,12 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="configuracao/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                <li>@if (Route::has('register')) <a href="{{ route('register') }}"> <i class="fa fa-circle-o"></i> Register</a> @endif
+                  </li>
 
               </ul>
             </li>
-             <li>
-              <a href="#">
-                <i class="fa fa-plus-square"></i> <span>Ajuda</span>
-                <small class="label pull-right bg-red">PDF</small>
-              </a>
-            </li>
+
             <li>
               <a href="#">
                 <i class="fa fa-info-circle"></i> <span>Sobre...</span>
