@@ -13,11 +13,11 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					<th>Id</th>
-					<th>Id_agent</th>
-					<th>Telefone</th>
-          <th>inicial</th>
-          <th>final</th>
-          <th>duração</th>
+					<th>Agent</th>
+					<th>Tipo</th>
+          <th>Dia</th>
+          <th>Duracao</th>
+
 
 
 				</thead>
@@ -27,8 +27,8 @@
           <td>{{ $bkeak->agent}}</td>
           <td>{{ $bkeak->descricao}}</td>
           <td>{{ $bkeak->dia}}</td>
-          <td>{{ $bkeak->descricao}}</td>
-          <td>{{ $bkeak->descricao}}</td>
+          <td>{{ $bkeak->duracao}}</td>
+
 
 
 
