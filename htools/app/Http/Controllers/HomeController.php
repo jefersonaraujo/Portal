@@ -4,6 +4,8 @@ namespace sistemaLaravel\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Charts;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $charts = Charts::new('line', 'highcharts')
+        //     ->setTitle("My websites user")
+        //     ->setLabels(["ES","FR","RU"])
+        //     ->setElementLabel("TOTAL");
         return view('home');
     }
 }
