@@ -176,6 +176,8 @@ return [
         sistemaLaravel\Providers\RouteServiceProvider::class,
         //////////////////addd
         Collective\Html\HtmlServiceProvider::class,
+        //charts
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
 
 
     ],
