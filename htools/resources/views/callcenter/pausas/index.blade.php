@@ -2,8 +2,8 @@
 @section('conteudo')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Lista de Categorias <a href="concentrador/create"><button class="btn btn-success">Novo</button></a></h3>
-		@include('pabx.chamadas.search')
+		<h3>Break </h3>
+
 	</div>
 </div>
 
@@ -18,20 +18,18 @@
           <th>inicial</th>
           <th>final</th>
           <th>duração</th>
-          <th>status</th>
-          <th>wait</th>
+
 
 				</thead>
-        @foreach ($cham as $call)
+        @foreach ($pausa as $bkeak)
         <tr>
-          <td>{{ $call->id}}</td>
-          <td>{{ $call->id_agent}}</td>
-          <td>{{ $call->callerid}}</td>
-          <td>{{ $call->datetime_init}}</td>
-          <td>{{ $call->datetime_end}}</td>
-          <td>{{ $call->duration}}</td>
-          <td>{{ $call->status}}</td>
-          <td>{{ $call->duration_wait}}</td>
+          <td>{{ $bkeak->cod}}</td>
+          <td>{{ $bkeak->agent}}</td>
+          <td>{{ $bkeak->descricao}}</td>
+          <td>{{ $bkeak->dia}}</td>
+          <td>{{ $bkeak->descricao}}</td>
+          <td>{{ $bkeak->descricao}}</td>
+
 
 
         </tr>
@@ -39,7 +37,7 @@
         @endforeach
       </table>
       </div>
-      {{$cham->render()}}
+      {{$pausa->render()}}
  </div>
  </div>
  @stop
