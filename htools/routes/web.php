@@ -20,6 +20,7 @@ Route::resource('callcenter/agent', 'AgentController');
 Route::resource('callcenter/pausas', 'PausasController');
 Route::resource('pabx/chamadas', 'ChamadasController');
 Route::resource('pabx/abandonadas', 'AbandonadasController');
+Route::resource('pabx/mramais', 'MonitorRamaisController');
 
 
 
