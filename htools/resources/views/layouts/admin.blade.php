@@ -121,9 +121,9 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="chamadas/report_all"><i class="fa fa-circle-o"></i> Chamadas</a></li>
-                <li><a href="chamadas/report_agent"><i class="fa fa-circle-o"></i>Chamadas Agent</a></li>
-                <li><a href="chamadas/report_pausa"><i class="fa fa-circle-o"></i>Pausas Acumuladas</a></li>
+                <li><a href="{{ url('chamadas/report_all') }}"><i class="fa fa-circle-o"></i> Chamadas</a></li>
+                <li><a href="{{ url('chamadas/report_agent') }}"><i class="fa fa-circle-o"></i>Chamadas Agent</a></li>
+                <li><a href="{{ url('chamadas/report_pausa') }}"><i class="fa fa-circle-o"></i>Pausas Acumuladas</a></li>
               </ul>
             </li>
 
@@ -133,7 +133,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="configuracao/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                <li><a href="{{ url('register') }}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
                 <li>@if (Route::has('register')) <a href="{{ route('register') }}"> <i class="fa fa-circle-o"></i> Register</a> @endif
                   </li>
 
