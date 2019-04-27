@@ -95,7 +95,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="pabx/ramais"><i class="fa fa-circle-o"></i> Ramais</a></li>
+                <li><a href="{{ pabx/ramais }}"><i class="fa fa-circle-o"></i> Ramais</a></li>
                 <li><a href="pabx/chamadas"><i class="fa fa-circle-o"></i> Chamadas</a></li>
                 <li><a href="pabx/abandonadas"><i class="fa fa-circle-o"></i> Abandonadas</a></li>
                 <li><a href="pabx/MRamais"><i class="fa fa-circle-o"></i> Monitoramento de Ramais</a></li>
