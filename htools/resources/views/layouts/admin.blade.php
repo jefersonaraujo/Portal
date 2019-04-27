@@ -95,10 +95,10 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ pabx/ramais }}"><i class="fa fa-circle-o"></i> Ramais</a></li>
-                <li><a href="pabx/chamadas"><i class="fa fa-circle-o"></i> Chamadas</a></li>
-                <li><a href="pabx/abandonadas"><i class="fa fa-circle-o"></i> Abandonadas</a></li>
-                <li><a href="pabx/MRamais"><i class="fa fa-circle-o"></i> Monitoramento de Ramais</a></li>
+                <li><a href="{{ url('/pabx/ramais') }}"><i class="fa fa-circle-o"></i> Ramais</a></li>
+                <li><a href="{{ url('/pabx/chamadas') }}"><i class="fa fa-circle-o"></i> Chamadas</a></li>
+                <li><a href="{{ url('/pabx/abandonadas') }}"><i class="fa fa-circle-o"></i> Abandonadas</a></li>
+                <li><a href="{{ url('/pabx/MRamais') }}"><i class="fa fa-circle-o"></i> Monitoramento de Ramais</a></li>
               </ul>
             </li>
 
@@ -109,8 +109,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="callcenter/agent"><i class="fa fa-circle-o"></i> Agent</a></li>
-                <li><a href="callcenter/pausas"><i class="fa fa-circle-o"></i> Pausas</a></li>
+                <li><a href="{{ url('callcenter/agent') }}"><i class="fa fa-circle-o"></i> Agent</a></li>
+                <li><a href="{{ url('callcenter/pausas') }}"><i class="fa fa-circle-o"></i> Pausas</a></li>
               </ul>
             </li>
             <li class="treeview">
