@@ -51,9 +51,14 @@ class HomeController extends Controller
       ->where('datetime_init','LIKE', '%'.$mytime.'%')
       ->paginate(15);
 
+      $call=DB::table('current_call_entry as chamada')
+      ->join('agent as ag', 'ag.id', '=','chamada.id_agent')
+        ->select('ag.name as agent','chamada.callerid as telefone')
+      ->paginate(15);
+
 
         return view('home',
-        ["showCounts"=>$showCounts,"showCounts2"=>$showCounts2,"showCounts3"=>$showCounts3,"showCounts4"=>$showCounts4,"break"=>$break]);
+        ["showCounts"=>$showCounts,"showCounts2"=>$showCounts2,"showCounts3"=>$showCounts3,"showCounts4"=>$showCounts4,"break"=>$break,"call"=>$call]);
 
         //return view('home');
 
