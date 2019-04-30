@@ -1,6 +1,12 @@
 @extends('layouts.admin')
 @section('conteudo')
-
+<script type="text/javascript">
+    function autoRefreshPage()
+    {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefreshPage()', 10000);
+</script>
     <div class="info-box">
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -22,7 +28,7 @@
 
         <div class="info-box-content">
           <span class="info-box-text">Chamadas Perdidas</span>
-          <span class="info-box-number">41,410</span>
+          <span class="info-box-number">5</span>
         </div>
       <!-- /.info-box-content -->
     </div>
@@ -35,11 +41,11 @@
 
     <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
-      <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+      <span class="info-box-icon bg-green"><i class="ion-android-phone-portrait"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Sales</span>
-        <span class="info-box-number">760</span>
+        <span class="info-box-text">Em atendimento</span>
+        <span class="info-box-number">1</span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -48,11 +54,11 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
-      <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+      <span class="info-box-icon bg-yellow"><i class="ion-speakerphone"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">New Members</span>
-        <span class="info-box-number">2,000</span>
+        <span class="info-box-text">Na fila</span>
+        <span class="info-box-number">2</span>
       </div>
       <!-- /.info-box-content -->
     </div>
