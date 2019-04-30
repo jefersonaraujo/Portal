@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+            <span class="info-box-icon bg-aqua"><i class="ion-ios-telephone"></i></span>
 
               <div class="info-box-content">
                   <span class="info-box-text">Total Chamadas</span>
@@ -18,10 +18,10 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+        <span class="info-box-icon bg-red"><i class="ion-ios-telephone-outline"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Likes</span>
+          <span class="info-box-text">Chamadas Perdidas</span>
           <span class="info-box-number">41,410</span>
         </div>
       <!-- /.info-box-content -->

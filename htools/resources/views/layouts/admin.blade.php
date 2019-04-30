@@ -32,7 +32,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="" class="logo">
+        <a href="{{ url('/') }}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>PB</b>X</span>
           <!-- logo for regular state and mobile devices -->
@@ -89,7 +89,7 @@
             <li class="header"></li>
 
             <li class="treeview">
-              <a href="#">
+              <a href="{{ url('home') }}">
                 <i class="fa fa-laptop"></i>
                 <span>PABX IP</span>
                 <i class="fa fa-angle-left pull-right"></i>
