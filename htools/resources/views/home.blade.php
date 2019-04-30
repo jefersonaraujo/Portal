@@ -76,16 +76,15 @@
 
     <div class="info-box-content">
       <span class="info-box-text">Em Atendimento</span>
-      <span class="info-box-number">{{$chamada->agent}} em Atendimento com {{ $chamada->telefone}} </span>
+      <span class="info-box-number">Agent {{$chamada->agent}} em Atendimento  com {{$chamada->telefone}} </span>
     </div>
     <!-- /.info-box-content -->
   </div>
   <!-- /.info-box -->
-
   @endforeach
-   {{$call->render()}}
+   {{$call ->render()}}
 
-  @foreach ($call as $pausa)
+  @foreach ($break as $pausa)
         <div class="info-box bg-yellow">
           <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
@@ -100,7 +99,34 @@
   @endforeach
    {{$break->render()}}
 
+        <div class="row">
+        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        		<div class="table-responsive">
+        			<table class="table table-striped table-bordered table-condensed table-hover">
+        				<thead>
+        					<th>Id</th>
+        					<th>Id_agent</th>
 
+
+
+        				</thead>
+                  @foreach ($call as $pausa)
+
+                <tr>
+                    <td>{{ $pausa->agent}}</td>
+                  <td>{{ $pausa->telefone}}</td>
+
+
+
+                </tr>
+                  @endforeach
+
+              </table>
+              </div>
+
+         </div>
+         </div>
+         {{$call->render()}}
 <!-- grafico -->
 
 @endsection
