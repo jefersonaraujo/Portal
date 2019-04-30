@@ -12,8 +12,7 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>Id</th>
-					<th>Id_agent</th>
+					<th>Agent</th>
 					<th>Telefone</th>
           <th>inicial</th>
           <th>final</th>
@@ -24,14 +23,13 @@
 				</thead>
         @foreach ($cham as $call)
         <tr>
-          <td>{{ $call->id}}</td>
-          <td>{{ $call->id_agent}}</td>
-          <td>{{ $call->callerid}}</td>
-          <td>{{ $call->datetime_init}}</td>
-          <td>{{ $call->datetime_end}}</td>
-          <td>{{ $call->duration}}</td>
+          <td>{{ $call->nome}}</td>
+          <td>{{ $call->telefone}}</td>
+          <td>{{ $call->inicio}}</td>
+          <td>{{ $call->fim}}</td>
+          <td>{{ $call->duracao}}</td>
           <td>{{ $call->status}}</td>
-          <td>{{ $call->duration_wait}}</td>
+          <td>{{ $call->espera}}</td>
 
 
         </tr>

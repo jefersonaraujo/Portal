@@ -16,11 +16,13 @@ class ChamadasController extends Controller
   public function index(Request $request){
     if($request){
       $query=trim($request->get('searchText'));
-      $chamadas=DB::table('call_entry')
+      $chamadas=DB::table('call_entry as chamadas')
+      ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
+        ->select('usuario.name as nome','chamadas.callerid as telefone','chamadas.datetime_init as inicio', 'chamadas.datetime_end as fim' ,'chamadas.duration as duracao','chamadas.status as status', 'chamadas.duration_wait as espera')
       ->where('callerid','LIKE', '%'.$query.'%')
       ->orwhere('status','LIKE', '%'.$query.'%')
       ->orderBy('datetime_init', 'desc')
-      ->paginate(10);
+      ->paginate(15);
       return view('pabx.chamadas.index',[
         "cham"=>$chamadas,"searchText"=>$query
       ]);
