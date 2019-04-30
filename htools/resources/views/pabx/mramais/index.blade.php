@@ -9,7 +9,7 @@
 
               <div class="info-box-content">
                   <span class="info-box-text">CPU Traffic</span>
-                  <span class="info-box-number">90<small>%</small></span>
+                  <span class="info-box-number"> 55<small>%</small></span>
               </div>
                 <!-- /.info-box-content -->
             </div>
@@ -23,7 +23,7 @@
         <div class="info-box-content">
           <span class="info-box-text">Likes</span>
           <span class="info-box-number"> {{ $showCounts}}</span>
-				
+
         </div>
       <!-- /.info-box-content -->
     </div>

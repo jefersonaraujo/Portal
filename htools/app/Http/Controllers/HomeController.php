@@ -5,7 +5,8 @@ namespace sistemaLaravel\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Charts;
-
+use Carbon\Carbon;
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -23,12 +24,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+
+
     public function index()
     {
-        // $charts = Charts::new('line', 'highcharts')
-        //     ->setTitle("My websites user")
-        //     ->setLabels(["ES","FR","RU"])
-        //     ->setElementLabel("TOTAL");
-        return view('home');
+      $mytime = Carbon::now()->format('Y-m-d');
+      $showCounts=DB::table('call_entry')
+      ->where('datetime_entry_queue','LIKE', '%'.$mytime.'%')->count();
+        return view('home',
+        ["showCounts"=>$showCounts]);
+
     }
 }
