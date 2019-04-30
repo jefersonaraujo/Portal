@@ -70,7 +70,62 @@
   </div>
 
 
+  <!-- /.info-box -->
+  <div class="info-box bg-green">
+    <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
 
+    <div class="info-box-content">
+      <span class="info-box-text">Em Atendimento</span>
+      <span class="info-box-number">Agent Joao2 em Atendimento há </span>
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+  <!-- /.info-box -->
+
+
+  @foreach ($break as $pausa)
+        <div class="info-box bg-yellow">
+          <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Em Pausa</span>
+            <span class="info-box-number">{{ $pausa->agent}}   esta em  pausa {{ $pausa->descricao}} desde as {{ $pausa->inicio}} </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+
+
+  @endforeach
+   {{$break->render()}}
+
+        <div class="row">
+        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        		<div class="table-responsive">
+        			<table class="table table-striped table-bordered table-condensed table-hover">
+        				<thead>
+        					<th>Id</th>
+        					<th>Id_agent</th>
+        					<th>Telefone</th>
+
+
+        				</thead>
+                  @foreach ($break as $pausa)
+
+                <tr>
+                    <td>{{ $pausa->agent}}</td>
+                  <td>{{ $pausa->descricao}}</td>
+                    <td>{{ $pausa->inicio}}</td>
+
+
+                </tr>
+                  @endforeach
+
+              </table>
+              </div>
+
+         </div>
+         </div>
+         {{$break->render()}}
 <!-- grafico -->
 
 @endsection

@@ -43,8 +43,17 @@ class HomeController extends Controller
       $showCounts4=DB::table('current_call_entry')
       ->where('id_agent', NULL)->count(); //não foi atendinda
 
+      $break=DB::table('audit as au')
+      ->join('agent as ag', 'ag.id', '=','au.id_agent')
+      ->join('break as br', 'br.id', '=','au.id_break')
+        ->select('ag.name as agent','br.name as descricao','au.datetime_init as inicio')
+      ->where('datetime_end', NULL)
+      ->where('datetime_init','LIKE', '%'.$mytime.'%')
+      ->paginate(15);
+
+
         return view('home',
-        ["showCounts"=>$showCounts,"showCounts2"=>$showCounts2,"showCounts3"=>$showCounts3,"showCounts4"=>$showCounts4]);
+        ["showCounts"=>$showCounts,"showCounts2"=>$showCounts2,"showCounts3"=>$showCounts3,"showCounts4"=>$showCounts4,"break"=>$break]);
 
         //return view('home');
 
