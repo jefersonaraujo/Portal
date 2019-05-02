@@ -76,7 +76,7 @@
 
     <div class="info-box-content">
       <span class="info-box-text">Em Atendimento</span>
-      <span class="info-box-number">Agent {{$chamada->agent}} em Atendimento  com {{$chamada->telefone}} </span>
+      <span class="info-box-number">Agent {{$chamada->agent}} em Atendimento  com {{$chamada->telefone}}  inicio  {{ $chamada->inicio}}</span>
     </div>
     <!-- /.info-box-content -->
   </div>

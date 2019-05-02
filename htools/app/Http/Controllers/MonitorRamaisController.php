@@ -12,12 +12,18 @@ class MonitorRamaisController extends Controller
 
 
     public function index(){
-      $mytime = Carbon::now()->format('Y-m-d');
+      $mytime = Carbon::now();
       $showCounts=DB::table('audit')
        ->where('datetime_init','LIKE', '%'.$mytime.'%')
       ->paginate(15);
+
+      $call=DB::table('current_call_entry as chamada')
+      ->join('agent as ag', 'ag.id', '=','chamada.id_agent')
+        ->select('ag.name as agent','chamada.callerid as telefone','chamada.datetime_init as inicio')
+      ->paginate(15);
+
         return view('pabx.mramais.index',
-        ["showCounts"=>$showCounts]);
+        ["showCounts"=>$showCounts,"call"=>$call,"hora"=>$mytime]);
       }
 
     }
