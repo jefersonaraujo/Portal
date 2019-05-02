@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 @section('conteudo')
+
+<?php
+
+
+use Carbon\Carbon;
+
+
+
+?>
 <script type="text/javascript">
     function autoRefreshPage()
     {
@@ -76,7 +85,14 @@
 
     <div class="info-box-content">
       <span class="info-box-text">Em Atendimento</span>
-      <span class="info-box-number">Agent {{$chamada->agent}} em Atendimento  com {{$chamada->telefone}}  inicio  {{ $chamada->inicio}}</span>
+      <span class="info-box-number">Agent {{$chamada->agent}} em Atendimento  com {{$chamada->telefone}} Tempo :
+<?php
+$start  =  Carbon::parse($chamada->inicio);
+$end    = Carbon::now();
+
+printf($start->diffInHours($end) . ':' . $start->diff($end)->format('%I:%S'));
+      ?>
+    </span>
     </div>
     <!-- /.info-box-content -->
   </div>
@@ -91,7 +107,14 @@
 
           <div class="info-box-content">
             <span class="info-box-text">Em Pausa</span>
-            <span class="info-box-number">{{ $pausa->agent}}   esta em  pausa {{ $pausa->descricao}} desde as {{ $pausa->inicio}} </span>
+            <span class="info-box-number">{{ $pausa->agent}}   esta em  pausa {{ $pausa->descricao}} | Tempo
+              <?php
+              $start  =  Carbon::parse($pausa->inicio);
+              $end    = Carbon::now();
+
+             printf($start->diffInHours($end) . ':' . $start->diff($end)->format('%I:%S'));
+              ?>
+            </span>
           </div>
           <!-- /.info-box-content -->
         </div>

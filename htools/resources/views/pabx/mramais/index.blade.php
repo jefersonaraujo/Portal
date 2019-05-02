@@ -95,6 +95,31 @@ use Carbon\Carbon;
         </div>
         {{$showCounts->render()}}
 
+        @foreach ($call as $chamada)
+        <!-- /.info-box -->
+        <div class="info-box bg-green">
+          <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Em Atendimento</span>
+            <span class="info-box-number">Agent {{$chamada->agent}} em Atendimento  com {{$chamada->telefone}}  inicio  {{ $chamada->inicio}}
+      <?php
+      //$start  =  DateTime::createFromFormat('Y-m-d H:i:s', $chamada->inicio);
+      $start  =  Carbon::parse($chamada->inicio);
+      $end    = Carbon::now();
+
+     printf($start->diffInHours($end) . ':' . $start->diff($end)->format('%I:%S'));
+            ?>
+          </span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+        @endforeach
+         {{$call ->render()}}
+
+
+
         <div class="info-box bg-green">
           <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
 
@@ -115,7 +140,7 @@ use Carbon\Carbon;
               printf("<br>");
 
 
-              $start  = new Carbon('2019-05-02 09:00:03');
+              $start  = $hora;
               $end    = Carbon::now();
               ///$start->diff($end)->format('%H:%I:%S');
               printf($start->diffInHours($end) . ':' . $start->diff($end)->format('%I:%S'));
