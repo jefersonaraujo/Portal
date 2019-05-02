@@ -85,6 +85,7 @@
    {{$call ->render()}}
 
   @foreach ($break as $pausa)
+
         <div class="info-box bg-yellow">
           <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
@@ -102,19 +103,20 @@
         <div class="row">
         	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         		<div class="table-responsive">
+              <h2>Abandonadas</h2>
         			<table class="table table-striped table-bordered table-condensed table-hover">
         				<thead>
-        					<th>Id</th>
-        					<th>Id_agent</th>
+        					<th>Telefone</th>
+        					<th>Hora</th>
 
 
 
         				</thead>
-                  @foreach ($call as $pausa)
+                  @foreach ($lost as $losts)
 
                 <tr>
-                    <td>{{ $pausa->agent}}</td>
-                  <td>{{ $pausa->telefone}}</td>
+                    <td>{{ $losts->callerid}}</td>
+                  <td>{{ $losts->datetime_entry_queue}}</td>
 
 
 
@@ -126,7 +128,7 @@
 
          </div>
          </div>
-         {{$call->render()}}
+         {{$lost->render()}}
 <!-- grafico -->
 
 @endsection

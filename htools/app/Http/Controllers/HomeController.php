@@ -56,9 +56,14 @@ class HomeController extends Controller
         ->select('ag.name as agent','chamada.callerid as telefone')
       ->paginate(15);
 
+      $lost=DB::table('call_entry as chamada')
+      ->where('status','abandonada')
+      ->where('datetime_entry_queue','LIKE', '%'.$mytime.'%')
+      ->paginate(15);
+
 
         return view('home',
-        ["showCounts"=>$showCounts,"showCounts2"=>$showCounts2,"showCounts3"=>$showCounts3,"showCounts4"=>$showCounts4,"break"=>$break,"call"=>$call]);
+        ["showCounts"=>$showCounts,"showCounts2"=>$showCounts2,"showCounts3"=>$showCounts3,"showCounts4"=>$showCounts4,"break"=>$break,"call"=>$call,"lost"=>$lost]);
 
         //return view('home');
 
