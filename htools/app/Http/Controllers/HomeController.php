@@ -43,6 +43,17 @@ class HomeController extends Controller
       $showCounts4=DB::table('current_call_entry')
       ->where('id_agent', NULL)->count(); //não foi atendinda
 
+
+      $showCounts5=DB::table('audit as au')
+        ->join('break as br', 'br.id', '=','au.id_break')
+          ->where('au.id_break','!=', '4')
+          ->where('au.id_break','!=', '5')
+          ->where('au.id_break','!=', '6')
+          ->where('au.id_break','!=', '8')
+          ->where('au.id_break','!=', '9')
+          ->where('au.datetime_init','LIKE', '%'.$mytime.'%')->count();
+
+
       $break=DB::table('audit as au')
       ->join('agent as ag', 'ag.id', '=','au.id_agent')
       ->join('break as br', 'br.id', '=','au.id_break')
@@ -63,7 +74,7 @@ class HomeController extends Controller
 
 
         return view('home',
-        ["showCounts"=>$showCounts,"showCounts2"=>$showCounts2,"showCounts3"=>$showCounts3,"showCounts4"=>$showCounts4,"break"=>$break,"call"=>$call,"lost"=>$lost]);
+        ["showCounts"=>$showCounts,"showCounts2"=>$showCounts2,"showCounts3"=>$showCounts3,"showCounts4"=>$showCounts4,"showCounts5"=>$showCounts5,"break"=>$break,"call"=>$call,"lost"=>$lost]);
 
         //return view('home');
 

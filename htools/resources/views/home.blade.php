@@ -63,11 +63,11 @@ use Carbon\Carbon;
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
-      <span class="info-box-icon bg-yellow"><i class="ion-speakerphone"></i></span>
+      <span class="info-box-icon bg-yellow"><i class="ion-ios-calculator"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">Na fila</span>
-        <span class="info-box-number">{{ $showCounts4}}</span>
+        <span class="info-box-text">Efetuadas</span>
+        <span class="info-box-number">{{ $showCounts5}}</span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -85,7 +85,7 @@ use Carbon\Carbon;
 
     <div class="info-box-content">
       <span class="info-box-text">Em Atendimento</span>
-      <span class="info-box-number">Agent {{$chamada->agent}} em Atendimento  com {{$chamada->telefone}} Tempo :
+      <span class="info-box-number">Agent {{$chamada->agent}} em Atendimento  com {{$chamada->telefone}} | Tempo :
 <?php
 $start  =  Carbon::parse($chamada->inicio);
 $end    = Carbon::now();
