@@ -22,7 +22,7 @@ class ChamadasController extends Controller
       ->where('callerid','LIKE', '%'.$query.'%')
       ->orwhere('status','LIKE', '%'.$query.'%')
       ->orderBy('datetime_init', 'desc')
-      ->paginate(12);
+      ->paginate(20);
       return view('pabx.chamadas.index',[
         "cham"=>$chamadas,"searchText"=>$query
       ]);
