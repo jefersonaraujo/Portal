@@ -20,7 +20,7 @@ class AbandonadasController extends Controller
       ->where('callerid','LIKE', '%'.$query.'%')
       ->where('duration', NULL)
       ->orderBy('datetime_end', 'desc')
-      ->paginate(10);
+      ->paginate(20);
       return view('pabx.abandonadas.index',[
         "lost"=>$chamadas,"searchText"=>$query
       ]);
