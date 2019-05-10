@@ -10,23 +10,32 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{asset('plugins/Ionicons/css/ionicons.min.css')}}">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{asset('bootstrap-daterangepicker/daterangepicker.css')}}">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{asset('bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{asset('plugins/iCheck/all.css')}}">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="{{asset('bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css')}}">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="{{asset('plugins/timepicker/bootstrap-timepicker.min.css')}}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('select2/dist/css/select2.min.css')}}">
+
+
+
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('css/AdminLTE.min.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/Ionicons/css/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('bootstrap-daterangepicker/daterangepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
-
-    <link rel="stylesheet" href="{{asset('bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/timepicker/bootstrap-timepicker.min.css')}}">
-
-    <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/iCheck/all.css')}}">
-
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
     <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+
+        <link rel="stylesheet" href="{{asset('plugins/jvectormap/jquery-jvectormap.css')}}">
 
     <!-- Google Font -->
 <link rel="stylesheet"
@@ -216,22 +225,39 @@
     <!-- AdminLTE App -->
     <script src="{{asset('js/app.min.js')}}"></script>
     <script src="{{asset('js/adminlte.min.js')}}"></script>
+    <script src="{{asset('js/demo.js')}}"></script>
 
-    <!-- <script src="{{asset('plugins/chartjs/Chart.js')}}"></script> -->
-    <script src="{{asset('plugins/chart.js/Chart.js')}}"></script>
-    <script src="{{asset('plugins/fastclick/fastclick.js')}}"></script>
-    <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('select2/dist/js/select2.full.min.js')}}">
+    <!-- InputMask -->
     <script src="{{asset('plugins/input-mask/jquery.inputmask.js')}}"></script>
     <script src="{{asset('plugins/input-mask/jquery.inputmask.date.extensions.js')}}"></script>
     <script src="{{asset('plugins/input-mask/jquery.inputmask.extensions.js')}}"></script>
-
+    <!-- date-range-picker -->
+    <link rel="stylesheet" href="{{asset('moment/min/moment.min.js')}}">
+    <link rel="stylesheet" href="{{asset('bootstrap-datepicker/dist/js/bootstrap-datepicker.js')}}">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="{{asset('bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}">
+    <!-- bootstrap color picker -->
+    <link rel="stylesheet" href="{{asset('bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js')}}">
+    <!-- bootstrap time picker -->
     <script src="{{asset('plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
+    <!-- SlimScroll -->
+    <script src="{{asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="{{asset('plugins/iCheck/icheck.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{asset('plugins/fastclick/fastclick.js')}}"></script>
+
+
+    <script src="{{asset('plugins/chart.js/Chart.js')}}"></script>
+
+    <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
+
 
 
     <link rel="stylesheet" href="{{asset('bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
-    <link rel="stylesheet" href="{{asset('bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}">
-    <link rel="stylesheet" href="{{asset('bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js')}}">
-    <link rel="stylesheet" href="{{asset('moment/min/moment.min.js')}}">
+
 
 
 
