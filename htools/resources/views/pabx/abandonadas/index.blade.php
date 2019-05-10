@@ -13,14 +13,7 @@
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-<script type="text/javascript">
-$(function() {
-				$( "#datetimepicker" ).datepicker();
-				//Date range picker
-				$('#reservation').datepicker();
-					$('#reservation2').datepicker();
-			});
-	</script>
+
 
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">

@@ -266,11 +266,18 @@
 
 
 
+    <script type="text/javascript">
+    $(function() {
+    				$( "#datetimepicker" ).datepicker();
+    				//Date range picker
+    				$('#reservation').datepicker();
+    					$('#reservation2').datepicker();
+    			});
+    	</script>
 
 
 
 
-    
 
 
   </body>
