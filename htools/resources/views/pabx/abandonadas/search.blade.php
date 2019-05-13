@@ -16,7 +16,7 @@
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<input type="text" class="form-control pull-right" name="reservation"  id="reservatiosn">
+						<input type="text" class="form-control pull-right" id="reservation">
 					</div>
 					<!-- /.input group -->
 				</div>
@@ -28,7 +28,7 @@
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<input type="text" class="form-control pull-right" name="reservation2"  id="resersvation2">
+						<input type="text" class="form-control pull-right" id="reservation2">
 					</div>
 					<!-- /.input group -->
 				</div>
@@ -39,15 +39,6 @@
 		</div>
 
 		<div class="form-group">
-			<label>Até:</label>
-
-			<div class="input-group">
-				<div class="input-group-addon">
-					<i class="fa fa-calendar"></i>
-				</div>
-				<input type="text" class="form-control pull-right" name="reservation2"  id="reservation2" >
-			</div>
-
 			<div class="input-group">
 				<div class="input-group-addon">
 					<i class="fa fa-phone"></i>
