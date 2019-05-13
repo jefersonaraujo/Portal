@@ -269,10 +269,29 @@
     <script type="text/javascript">
     $(function() {
     				$( "#datetimepicker" ).datepicker();
+
+            $('#from').datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
+            $('#dateFrom').datepicker();
     				//Date range picker
-    				$('#reservation').datepicker();
-    					$('#reservation2').datepicker();
+    				$('#to').datepicker();
+    					// $('#from').datepicker({
+              //   dateFormat: 'dd-mm-yy'
+              // });
     			});
+
+
+     //    $(function(){
+     //     $("#reservation").datepicker({ dateFormat: 'yy-mm-dd' });
+     //     $("#reservation2").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+     //         var minValue = $(this).val();
+     //         minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+     //         minValue.setDate(minValue.getDate()+1);
+     //         $("#reservation").datepicker( "option", "minDate", minValue );
+     //     })
+     // });
+
     	</script>
 
 

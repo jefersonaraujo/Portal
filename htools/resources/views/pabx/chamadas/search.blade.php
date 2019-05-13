@@ -16,7 +16,7 @@
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<input type="text" class="form-control pull-right" id="reservation">
+						<input type="text" class="form-control pull-right" data-date-format='dd-mm-yyyy'  id="from">
 					</div>
 					<!-- /.input group -->
 				</div>
@@ -28,7 +28,7 @@
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<input type="text" class="form-control pull-right" id="reservation2">
+						<input type="text" class="form-control pull-right"  data-date-format='dd-mm-yyyy'  id="to">
 					</div>
 					<!-- /.input group -->
 				</div>
