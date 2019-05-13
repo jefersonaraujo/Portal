@@ -1,5 +1,8 @@
 {!!Form::open(array('url'=>'pabx/abandonadas', 'method'=>'GET', 'autocomplete'=>'off', 'role' => 'search'))!!}
+<?php
 
+
+ ?>
 <div class="row">
 	<div class="col-md-6">
 
@@ -16,7 +19,7 @@
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<input type="text" class="form-control pull-right" data-date-format='dd-mm-yyyy' id="from">
+						<input type="text" class="form-control pull-right" data-date-format='yyyy-mm-dd' name="from" id="from" value="2019-05-01">
 					</div>
 					<!-- /.input group -->
 				</div>
@@ -28,7 +31,7 @@
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<input type="text" class="form-control pull-right" data-date-format='dd-mm-yyyy' id="to">
+						<input type="text" class="form-control pull-right" data-date-format='yyyy-mm-dd' name="to" id="to" value="2019-05-02">
 					</div>
 					<!-- /.input group -->
 				</div>
