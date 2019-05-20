@@ -11,11 +11,13 @@ class CdrController extends Controller
   public function index(){
 
       $tabUser = DB::connection('another')->table('cdr')
-      ->select('cdr.clid as agent','cdr.src as origim','cdr.disposition as statys')
+      ->select('cdr.src as origem', 'cdr.dst as destino','cdr.duration as duracao','cdr.disposition as status')
       ->orderBy('calldate', 'desc')
       //->where('descricao','LIKE', '%'.$query.'%')
-      ->paginate(10);
+      ->paginate(20);
+      return view('callcenter.cdr.index',[
+        "cham"=>$tabUser]);
       //->get();
-          return response()->json($tabUser);
+        //  return response()->json($tabUser);
   }
 }
