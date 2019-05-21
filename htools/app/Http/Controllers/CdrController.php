@@ -11,7 +11,7 @@ class CdrController extends Controller
   public function index(){
 
       $tabUser = DB::connection('another')->table('cdr')
-      ->select('cdr.src as origem', 'cdr.dst as destino','cdr.duration as duracao','cdr.disposition as status')
+      ->select('cdr.src as origem', 'cdr.dst as destino','cdr.duration as duracao','cdr.disposition as status', 'calldate as data')
       ->orderBy('calldate', 'desc')
       //->where('descricao','LIKE', '%'.$query.'%')
       ->paginate(20);

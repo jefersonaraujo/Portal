@@ -12,7 +12,7 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-
+					<th>Data</th>
 					<th>Origem</th>
 					<th>Destino</th>
 					<th>duracao</th>
@@ -21,6 +21,7 @@
 				</thead>
         @foreach ($cham as $ag)
         <tr>
+					<td>{{ $ag->data}}</td>
           <td>{{ $ag->origem}}</td>
           <td>{{ $ag->destino}}</td>
 					<td>{{ $ag->duracao}}</td>
