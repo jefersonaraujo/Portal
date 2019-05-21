@@ -21,7 +21,7 @@ Route::resource('callcenter/pausas', 'PausasController');
 Route::resource('pabx/chamadas', 'ChamadasController');
 Route::resource('pabx/abandonadas', 'AbandonadasController');
 Route::resource('pabx/mramais', 'MonitorRamaisController');
-Route::resource('callcenter/cdr', 'CdrController');
+Route::resource('pabx/cdr', 'CdrController');
 //Route::get('cdr', 'CdrController@index');
 
 

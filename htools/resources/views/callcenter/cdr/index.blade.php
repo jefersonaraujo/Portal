@@ -2,7 +2,8 @@
 @section('conteudo')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-
+		<h3>Chamadas Abandonadas </h3>
+		@include('callcenter.cdr.search')
 
 	</div>
 </div>
