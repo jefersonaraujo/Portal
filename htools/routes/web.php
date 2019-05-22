@@ -23,6 +23,10 @@ Route::resource('pabx/abandonadas', 'AbandonadasController');
 Route::resource('pabx/mramais', 'MonitorRamaisController');
 Route::resource('pabx/cdr', 'CdrController');
 //Route::get('cdr', 'CdrController@index');
+Route::get('pdf', 'AgentController@nameMethod');
+Route::get('generate-pdf','AgentController@generatePDF');
+
+
 
 
 
