@@ -32,9 +32,14 @@ class AgentController extends Controller
   public function generatePDF()
 {
     $data = ['title' => 'Welcome to HDTuto.com'];
-    $pdf = PDF::loadView('myPDF', $data);
+    //$data = array('title'=>'John Smith');
 
-    return $pdf->stream('itsolutionstuff.pdf');
+
+    $pdf = PDF::loadView('myPDF',$data);
+
+    // $pdf = PDF::loadHTML('<p>Hello World!!</p>');
+
+    return $pdf->stream('ineedsolutions.pdf');
 }
 
   public function nameMethod()
