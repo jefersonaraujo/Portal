@@ -16,7 +16,7 @@
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<input type="text" class="form-control pull-right" data-date-format='dd-mm-yyyy' name="from" id="from" value="2019-05-01">
+						<input type="text" class="form-control pull-right" data-date-format='yyyy-mm-dd' name="from" id="from"  value="{{$from}}">
 					</div>
 					<!-- /.input group -->
 				</div>
@@ -28,7 +28,7 @@
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<input type="text" class="form-control pull-right"  data-date-format='dd-mm-yyyy'  name="to" id="to" value="2019-05-01">
+						<input type="text" class="form-control pull-right"  data-date-format='yyyy-mm-dd'  name="to" id="to" value="{{$to}}">
 					</div>
 					<!-- /.input group -->
 				</div>
