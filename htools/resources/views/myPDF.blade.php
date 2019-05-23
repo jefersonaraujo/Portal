@@ -1,16 +1,27 @@
+@extends('layouts.admin')
+@section('conteudo')
+<div class="row">
+	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>TEste</title>
-</head>
-<body>
-	<h1>Welcome to ItSolutionStuff.com - {{ $title }}  </h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. {{ $title }} Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</body>
-</html>
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered table-condensed table-hover">
+				<thead>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Ip</th>
+
+
+				</thead>
+    		{{$title}}
+      </table>
+      </div>
+
+ </div>
+ </div>
+ @stop

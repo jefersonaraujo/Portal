@@ -2,8 +2,8 @@
 @section('conteudo')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>Lista de Agentes <a href="concentrador/create"><button class="btn btn-success">Novo</button></a></h3>
-		@include('cadastro.concentrador.search')
+		<h3>Lista de Agentes <a href="#"></a></h3>
+
 	</div>
 </div>
 
@@ -12,9 +12,9 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>Id</th>
+					<th>Cod</th>
 					<th>Nome</th>
-					<th>Ip</th>
+
           <th>Pass</th>
           <th>Status</th>
 
@@ -32,7 +32,7 @@
         @endforeach
       </table>
       </div>
-      {{$agent->render()}}
+      
  </div>
  </div>
  @stop
