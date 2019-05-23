@@ -25,6 +25,8 @@ Route::resource('callcenter/cdr', 'CdrController');
 //Route::get('cdr', 'CdrController@index');
 Route::get('pdf', 'AgentController@nameMethod');
 Route::get('generate-pdf','AgentController@generatePDF');
+Route::get('callcenter/report/generate-pdf','AgentReport@generatePDF');
+Route::resource('callcenter/report','AgentReport');
 
 
 

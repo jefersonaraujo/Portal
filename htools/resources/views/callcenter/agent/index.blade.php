@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Lista de Agentes <a href="#"></a></h3>
-
+			@include('callcenter.agent.search')
 	</div>
 </div>
 
@@ -32,7 +32,7 @@
         @endforeach
       </table>
       </div>
-      
+
  </div>
  </div>
  @stop

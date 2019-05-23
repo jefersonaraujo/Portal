@@ -3,8 +3,6 @@
 namespace sistemaLaravel\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-
 use sistemaLaravel\Agent;
 use Illuminate\Support\Facades\Redirect;
 use sistemaLaravel\Http\Requests\AgentFormRequest;
@@ -50,12 +48,12 @@ class AgentController extends Controller
     return $pdf->stream('ineedsolutions.pdf');
 }
 
-  public function nameMethod()
-{
-    // $products = Product::all();
-    //
-    // return \PDF::loadView('site.certificate.certificate', compact('products'))
-    //             // Se quiser que fique no formato a4 retrato: ->setPaper('a4', 'landscape')
-    //             ->download('nome-arquivo-pdf-gerado.pdf');
+public function show($id){
+  return view("callcenter.agent.show",
+  [
+    "agent"=>Agent::findOrFail($id)
+  ]);
+
 }
+
 }
