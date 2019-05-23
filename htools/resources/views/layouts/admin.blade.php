@@ -117,7 +117,7 @@
                 <li><a href="{{ url('/pabx/chamadas') }}"><i class="fa fa-circle-o"></i> Chamadas</a></li>
                 <li><a href="{{ url('/pabx/abandonadas') }}"><i class="fa fa-circle-o"></i> Abandonadas</a></li>
                 <li><a href="{{ url('/pabx/mramais') }}"><i class="fa fa-circle-o"></i> Monitoramento de Ramais</a></li>
-                <li><a href="{{ url('/pabx/cdr') }}"><i class="fa fa-circle-o"></i> Cdr</a></li>
+                <li><a href="{{ url('/callcenter/cdr') }}"><i class="fa fa-circle-o"></i> Cdr</a></li>
               </ul>
             </li>
 

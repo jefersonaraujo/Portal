@@ -8,31 +8,7 @@
 
 
 
-				<!-- Date range -->
-				<div class="form-group">
-					<label>Do dia:</label>
 
-					<div class="input-group">
-						<div class="input-group-addon">
-							<i class="fa fa-calendar"></i>
-						</div>
-						<input type="text" class="form-control pull-right" data-date-format='dd-mm-yyyy' name="from" id="from"">
-					</div>
-					<!-- /.input group -->
-				</div>
-				<!-- /.form group -->
-				<div class="form-group">
-					<label>Até:</label>
-
-					<div class="input-group">
-						<div class="input-group-addon">
-							<i class="fa fa-calendar"></i>
-						</div>
-						<input type="text" class="form-control pull-right"  data-date-format='dd-mm-yyyy'  name="to" id="to" >
-					</div>
-					<!-- /.input group -->
-				</div>
-				<!-- /.form group -->
 
 			</div>
 			<!-- /.box-body -->
