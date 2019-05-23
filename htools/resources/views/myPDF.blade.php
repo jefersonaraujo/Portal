@@ -1,27 +1,33 @@
-@extends('layouts.admin')
-@section('conteudo')
-<div class="row">
-	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEste</title>
+</head>
+<body>
 
 
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<div class="table-responsive">
-			<table class="table table-striped table-bordered table-condensed table-hover">
-				<thead>
-					<th>Id</th>
+	<div class="flex-center position-ref full-height">
+    <table>
+        <thead>
+					<th>Cod</th>
 					<th>Nome</th>
-					<th>Ip</th>
 
+					<th>Pass</th>
+					<th>Status</th>
 
 				</thead>
-    		{{$title}}
-      </table>
-      </div>
+				@foreach ($agent as $ag)
+				<tr>
+					<td>{{ $ag->number}}</td>
+					<td>{{ $ag->name}}</td>
+					<td>{{ $ag->password}}</td>
+					<td>{{ $ag->estatus}}</td>
 
- </div>
- </div>
- @stop
+
+				</tr>
+
+				@endforeach
+    </table>
+</body>
+</html>

@@ -10,34 +10,39 @@ use Illuminate\Support\Facades\Redirect;
 use sistemaLaravel\Http\Requests\AgentFormRequest;
 use DB;
 use PDF;
+use Carbon\Carbon;
 
 class AgentController extends Controller
 {
   public function __construct(){}
 
-  public function index(){
-    // if($request){
-    ///  $query=trim($request->get('searchText'));
-      $agentes=DB::table('agent')->get();
-    //  ->where('name','LIKE', '%'.$query.'%')
-      // ->orderBy('number', 'desc')
-
-
+  public function index(Request $request){
+    if($request){
+      $query=trim($request->get('searchText'));
+      $agentes=DB::table('agent')
+      ->where('name','LIKE', '%'.$query.'%')
+      ->orderBy('number', 'desc')
+      ->paginate(7);
       return view('callcenter.agent.index',[
-        "agent"=>$agentes]);
-  //  }
+        "agent"=>$agentes,"searchText"=>$query
+      ]);
+    }
 
   }
 
   public function generatePDF()
 {
-    $data = ['title' => 'Welcome to HDTuto.com'];
-    $agent = ['number' => '1', 'name' =>'teste'] ;
+  $mytime = Carbon::now()->format('Y-m-d');
+  $showCounts=DB::table('call_entry')
+    ->where('datetime_entry_queue','LIKE', '%'.$mytime.'%')->count();
+
+    $agentes=DB::table('agent')->get();
+    $data = ['agent'=> $agentes];
+
+  ///  $data = (['title' => $showCounts]);
     //$data = array('title'=>'John Smith');
 
-  //  $agentes=DB::table('agent')->get();
 
-    //  $data= ["agent"=>$agentes];
     $pdf = PDF::loadView('myPDF',$data);
 
     // $pdf = PDF::loadHTML('<p>Hello World!!</p>');
