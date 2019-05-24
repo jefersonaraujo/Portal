@@ -27,6 +27,7 @@ Route::get('pdf', 'AgentController@nameMethod');
 Route::get('generate-pdf','AgentController@generatePDF');
 Route::get('callcenter/report/generate-pdf','AgentReport@generatePDF');
 Route::resource('callcenter/report','AgentReport');
+Route::resource('report/report_agent','AgentReport');
 
 
 

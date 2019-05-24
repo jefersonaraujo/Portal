@@ -17,14 +17,22 @@ class AgentReport extends Controller
     public function index(Request $request){
       if($request){
         $query=trim($request->get('searchText'));
-        $agentes=DB::table('agent')
-        ->where('name','LIKE', '%'.$query.'%')
-        ->orderBy('number', 'desc')
-        ->paginate(7);
-        return view('callcenter.report.index',[
-          "agent"=>$agentes,"searchText"=>$query
+        $to=trim($request->get('to'));
+        $from=trim($request->get('from'));
+        $chamadas=DB::table('call_entry as chamadas')
+        ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
+          ->select('usuario.name as nome','chamadas.callerid as telefone', 'chamadas.datetime_init as inicio', 'chamadas.datetime_end as fim' ,'chamadas.duration as duracao','chamadas.status as status', 'chamadas.duration_wait as espera')
+            ->whereBetween('datetime_entry_queue',array($from,$to))
+            ->where('callerid','LIKE', '%'.$query.'%')
+        //->orwhere('status','LIKE', '%'.$query.'%')
+
+        ->orderBy('datetime_init', 'desc')->get();
+        //->get();
+        //->paginate(10);
+        return view('report.report_agent.index',[
+          "cham"=>$chamadas,"searchText"=>$query,"from"=>$from,"to"=>$to,
         ]);
-     }
+      }
 
     }
 
@@ -53,7 +61,7 @@ class AgentReport extends Controller
 }
 
 public function show(){
-  
+
 }
 
 
