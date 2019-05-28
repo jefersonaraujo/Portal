@@ -30,6 +30,10 @@ Route::resource('callcenter/report','AgentReport');
 Route::resource('report/report_agent','AgentReport');
 
 
+Route::resource('dashboard','DashboardController');
+
+
+
 
 
 
