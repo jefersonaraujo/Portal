@@ -29,8 +29,10 @@ class AgentReport extends Controller
         ->orderBy('datetime_init', 'desc')->get();
         //->get();
         //->paginate(10);
+        $agentes=DB::table('agent')->get();
+
         return view('report.report_agent.index',[
-          "cham"=>$chamadas,"searchText"=>$query,"from"=>$from,"to"=>$to,
+          "cham"=>$chamadas,"searchText"=>$query,"from"=>$from,"to"=>$to,"agentes"=>$agentes
         ]);
       }
 
