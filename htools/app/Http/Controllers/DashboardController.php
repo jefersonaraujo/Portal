@@ -6,6 +6,10 @@ use sistemaLaravel\Dashboard;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use DB;
+use ConsoleTVs\Charts\Classes\Chartjs\Chart;
+
+
+
 
 
 class DashboardController extends Controller
@@ -19,11 +23,13 @@ class DashboardController extends Controller
     public function index()
     {
 
-        $mytime = Carbon::now()->format('Y-m-d');
-        $showCounts=DB::table('call_entry')
-        ->where('datetime_entry_queue','LIKE', '%'.$mytime.'%')->count();
-          return view('/dashboard',
-          ["showCounts"=>$showCounts]);
+      //$chart = new SampleChart;
+      // $chart->labels(['One', 'Two', 'Three', 'Four']);
+      // $chart->dataset('My dataset', 'line', [1, 2, 3, 4]);
+      // $chart->dataset('My dataset 2', 'line', [4, 3, 2, 1]);
+
+        $chart = "teste";
+        return view('dashboard', ['chart' => $chart]);
 
     }
 

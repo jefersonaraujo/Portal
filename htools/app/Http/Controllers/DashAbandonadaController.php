@@ -14,14 +14,10 @@ class DashAbandonadaController extends Controller
 
 
     public function index(){
-      $chart = new SampleChart;
-      $chart->labels(['One', 'Two', 'Three']);
-
-
       $mytime = Carbon::now()->format('Y-m-d');
       $showCounts=DB::table('call_entry')
       ->where('datetime_entry_queue','LIKE', '%'.$mytime.'%')->count();
-        return view('/dashboard',
+        return view('/',
         ["showCounts"=>$showCounts]);
       }
 }

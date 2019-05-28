@@ -10,11 +10,7 @@ use Carbon\Carbon;
 
 ?>
 <script type="text/javascript">
-    function autoRefreshPage()
-    {
-        window.location = window.location.href;
-    }
-    setInterval('autoRefreshPage()', 15000);
+
 </script>
     <div class="info-box">
       <div class="row">
@@ -76,7 +72,9 @@ use Carbon\Carbon;
     <!-- /.col -->
     </div>
     <!-- /.row -->
+    {{ $chart}}
   </div>
+
 
 
 <!-- grafico -->
