@@ -24,7 +24,7 @@ Route::resource('pabx/mramais', 'MonitorRamaisController');
 Route::resource('callcenter/cdr', 'CdrController');
 //Route::get('cdr', 'CdrController@index');
 Route::get('pdf', 'AgentController@nameMethod');
-Route::get('generate-pdf','AgentController@generatePDF')->name('pdf');
+Route::get('generate-pdf/','AgentController@generatePDF')->name('pdf');
 Route::get('callcenter/report/generate-pdf','AgentReport@generatePDF');
 Route::resource('callcenter/report','AgentReport');
 Route::resource('report/report_agent','AgentReport');

@@ -16,6 +16,7 @@ class AgentReport extends Controller
 
     public function index(Request $request){
       if($request){
+        $dataForm = $request->all();
         $query=trim($request->get('searchText'));
         $to=trim($request->get('to'));
         $from=trim($request->get('from'));
@@ -29,10 +30,10 @@ class AgentReport extends Controller
         ->orderBy('datetime_init', 'desc')->get();
         //->get();
         //->paginate(10);
-        $agentes=DB::table('agent')->get();
+
 
         return view('report.report_agent.index',[
-          "cham"=>$chamadas,"searchText"=>$query,"from"=>$from,"to"=>$to,"agentes"=>$agentes
+          "cham"=>$chamadas,"searchText"=>$query,"from"=>$from,"to"=>$to,"dataForm"=>$dataForm
         ]);
       }
 
@@ -45,7 +46,7 @@ class AgentReport extends Controller
       // $showCounts=DB::table('call_entry')
       //   ->where('datetime_entry_queue','LIKE', '%'.$mytime.'%')->count();
       //
-        $agentes=DB::table('agent')->get();
+        $agentes=DB::table('call_entry')->get();
 
       // $query=trim($request->get('searchText'));
       // $agentes=DB::table('agent')

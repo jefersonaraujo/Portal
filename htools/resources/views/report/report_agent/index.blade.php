@@ -12,7 +12,7 @@
 		<div class="row no-print">
 			<div class="col-xs-12">
 
-				<a href="{{ route('pdf') }}"><button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+				<a href="{{ route('pdf',['pdf' => $dataForm]) }}"><button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
 					<i class="fa fa-download"></i> Generate PDF
 				</button></a>
 			</div>
