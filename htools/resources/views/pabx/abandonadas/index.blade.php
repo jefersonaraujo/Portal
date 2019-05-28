@@ -39,7 +39,14 @@
         @endforeach
       </table>
       </div>
-      {{$lost->render()}}
+			@if (isset($dataForm))
+					{!! $lost->appends($dataForm)->links() !!}
+			@else
+					{!! $lost->links() !!}
+			@endif
+
+
+			
  </div>
  </div>
 
