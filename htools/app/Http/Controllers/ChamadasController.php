@@ -15,6 +15,7 @@ class ChamadasController extends Controller
 
   public function index(Request $request){
     if($request){
+      $dataForm = $request->all();
       $query=trim($request->get('searchText'));
       $to=trim($request->get('to'));
       $from=trim($request->get('from'));
@@ -27,7 +28,7 @@ class ChamadasController extends Controller
       ->orderBy('datetime_init', 'desc')
       ->paginate(20);
       return view('pabx.chamadas.index',[
-        "cham"=>$chamadas,"searchText"=>$query,"from"=>$from,"to"=>$to,
+        "cham"=>$chamadas,"searchText"=>$query,"from"=>$from,"to"=>$to,"dataForm"=>$dataForm
       ]);
     }
 

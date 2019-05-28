@@ -37,7 +37,12 @@
         @endforeach
       </table>
       </div>
-      {{$cham->render()}}
+			@if (isset($dataForm))
+					{!! $cham->appends($dataForm)->links() !!}
+			@else
+					{!! $cham->links() !!}
+			@endif
+  
  </div>
  </div>
  @stop
