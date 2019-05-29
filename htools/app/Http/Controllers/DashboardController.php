@@ -4,7 +4,7 @@ namespace sistemaLaravel\Http\Controllers;
 use Illuminate\Http\Request;
 use sistemaLaravel\Dashboard;
 use sistemaLaravel\Charts\DashboardChart;
-
+use sistemaLaravel\User;
 use DB;
 
 
@@ -24,16 +24,23 @@ class DashboardController extends Controller
     public function index()
     {
       //  $pulse = Agent::all();
-        $agentes=DB::table('agent');
+        $agentes=DB::table('call_entry')->whereDate('datetime_entry_queue', today())->count();
 
         $chart = new DashboardChart;
-        $chart->labels(['One', 'Two', 'Three', 'Four']);
-        $chart->dataset('My dataset', 'line', [1, 2, 3, 4]);
-        $chart->dataset('My dataset 2', 'line', [4, 3, 2, 1]);
+        $today_users = User::whereDate('created_at', today())->count();
+        $yesterday_users = User::whereDate('created_at', today()->subDays(5000))->count();
+        $users_2_days_ago = User::whereDate('created_at', today()->subDays(2))->count();
+        $chart->labels(['2 days ago', 'Yesterday', 'Today']);
+        $chart->dataset('My dataset', 'line', [$agentes, $yesterday_users, $today_users]);
+
+
+        // $chart->labels(['2 days ago', 'Yesterday', 'Today']);
+        // $chart->dataset('My dataset', 'line', [1, 2, 3, 4]);
+        // $chart->dataset('My dataset 1', 'line', collect([2, 3, 4, 5]));
 
       //  $chart = "teste";
-        //return view('dashboard',compact('agentes','chart'));
-         return view('dashboard', ['chart' => $chart]);
+        return view('dashboard',compact('agentes','chart'));
+         //return view('dashboard', ['chart' => $chart]);
 
     }
 

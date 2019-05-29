@@ -118,7 +118,7 @@
 
 
             <li>
-              <a href="#">
+              <a href="{{ url('/dashboard') }}">
                 <i class="fa fa-paper-plane"></i> <span>DASHBOARD</span>
               </a>
             </li>
@@ -157,7 +157,7 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('chamadas/report_all') }}"><i class="fa fa-circle-o"></i> Chamadas</a></li>
+                <li><a href="{{ url('report/report_agent') }}"><i class="fa fa-circle-o"></i> Chamadas</a></li>
                 <li><a href="{{ url('chamadas/report_agent') }}"><i class="fa fa-circle-o"></i>Chamadas Agent</a></li>
                 <li><a href="{{ url('chamadas/report_pausa') }}"><i class="fa fa-circle-o"></i>Pausas Acumuladas</a></li>
               </ul>
@@ -218,7 +218,7 @@
                               @yield('conteudo')
                               <!--Fim Conteudo-->
                            </div>
-                          
+
                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
                         </div>
 
