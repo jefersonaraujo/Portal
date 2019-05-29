@@ -3,6 +3,6 @@
 
 
   {!! $chart->container() !!}
-  
+   {!! $chart->script() !!}
 
 @endsection

@@ -28,7 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.6/highcharts.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/fusioncharts@3.12.2/fusioncharts.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.0.2/echarts-en.min.js" charset="utf-8"></script>
@@ -218,7 +218,8 @@
                               @yield('conteudo')
                               <!--Fim Conteudo-->
                            </div>
-                           {!! $chart->script() !!}
+                          
+                           <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
                         </div>
 
                       </div>
@@ -275,7 +276,7 @@
     <script src="{{asset('plugins/fastclick/fastclick.js')}}"></script>
 
 
-    <script src="{{asset('plugins/chart.js/Chart.js')}}"></script>
+    <!-- <script src="{{asset('plugins/chart.js/Chart.js')}}"></script> -->
 
     <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>
 
