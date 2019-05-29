@@ -1,12 +1,13 @@
 <?php
 
 namespace sistemaLaravel\Http\Controllers;
-
-use sistemaLaravel\Dashboard;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use sistemaLaravel\Dashboard;
+use sistemaLaravel\Charts\DashboardChart;
+
 use DB;
-use ConsoleTVs\Charts\Classes\Chartjs\Chart;
+
+
 
 
 
@@ -22,14 +23,17 @@ class DashboardController extends Controller
      */
     public function index()
     {
+      //  $pulse = Agent::all();
+        $agentes=DB::table('agent');
 
-      //$chart = new SampleChart;
-      // $chart->labels(['One', 'Two', 'Three', 'Four']);
-      // $chart->dataset('My dataset', 'line', [1, 2, 3, 4]);
-      // $chart->dataset('My dataset 2', 'line', [4, 3, 2, 1]);
+        $chart = new DashboardChart;
+        $chart->labels(['One', 'Two', 'Three', 'Four']);
+        $chart->dataset('My dataset', 'line', [1, 2, 3, 4]);
+        $chart->dataset('My dataset 2', 'line', [4, 3, 2, 1]);
 
-        $chart = "teste";
-        return view('dashboard', ['chart' => $chart]);
+      //  $chart = "teste";
+        //return view('dashboard',compact('agentes','chart'));
+         return view('dashboard', ['chart' => $chart]);
 
     }
 

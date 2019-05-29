@@ -4,6 +4,8 @@ namespace sistemaLaravel\Charts;
 
 use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 
+
+
 class DashboardChart extends Chart
 {
     /**

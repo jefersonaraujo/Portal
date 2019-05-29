@@ -218,6 +218,7 @@
                               @yield('conteudo')
                               <!--Fim Conteudo-->
                            </div>
+                           {!! $chart->script() !!}
                         </div>
 
                       </div>
