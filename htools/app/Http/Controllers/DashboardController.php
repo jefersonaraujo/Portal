@@ -43,6 +43,15 @@ class DashboardController extends Controller
         // $chart->dataset('My dataset 1', 'line', collect([2, 3, 4, 5]));
 
       //  teste
+      // $chamadas=DB::table('call_entry as chamadas')
+      // ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
+      //   ->select('usuario.name as nome')
+      //   ->whereDate('datetime_entry_queue',today())->count();
+
+      $chamadas=DB::table('call_entry as chamadas')
+      ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
+        ->select('usuario.name as nome')
+        ->whereDate('datetime_entry_queue',today())->get();
 
 
 
@@ -52,8 +61,25 @@ class DashboardController extends Controller
         $chart->labels(["Chamadas hoje"]);
 
         $chartline = new DashboardChart;
-        $chartline->dataset('Chamadas Atendida', 'pie', [$total_chamada_dia])->backgroundcolor('green');
-        $chartline->dataset('Chamadas Abandonadas', 'pie', [$total_lost_dia])->backgroundcolor('red');
+        $teste =  'name';
+        // var_dump($chamadas);
+        foreach($chamadas as  $chave => $valor){
+            echo ('<div>testetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteste'.$chave.'</div><br>');
+
+
+        }
+
+         $chartline->dataset($teste, 'bar', [$total_chamada_dia])->backgroundcolor('blue');
+
+        // for ($i = 1; $i <= 2; $i++) {
+        //     if ($i == 1) {
+        //         $chartline->dataset('Chamadas Atendida', 'bar', [$total_chamada_dia])->backgroundcolor('blue');
+        //       }
+        //       if($i == 2){
+        //         $chartline->dataset('Chamadas Abandonadas', 'bar', [$chamadas])->backgroundcolor('red');
+        //       }
+        //
+        //   }
         $chartline->labels(["Chamadas hoje"]);
 
         return view('dashboard',compact('agentes','chart', 'chartline'));
