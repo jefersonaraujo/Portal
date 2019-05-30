@@ -51,7 +51,12 @@ class DashboardController extends Controller
         $chart->dataset('Chamadas Abandonadas', 'bar', [$total_lost_dia])->backgroundcolor('red');
         $chart->labels(["Chamadas hoje"]);
 
-        return view('dashboard',compact('agentes','chart'));
+        $chartline = new DashboardChart;
+        $chartline->dataset('Chamadas Atendida', 'pie', [$total_chamada_dia])->backgroundcolor('green');
+        $chartline->dataset('Chamadas Abandonadas', 'pie', [$total_lost_dia])->backgroundcolor('red');
+        $chartline->labels(["Chamadas hoje"]);
+
+        return view('dashboard',compact('agentes','chart', 'chartline'));
          //return view('dashboard', ['chart' => $chart]);
 
     }
