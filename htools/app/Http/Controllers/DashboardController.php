@@ -24,21 +24,33 @@ class DashboardController extends Controller
     public function index()
     {
       //  $pulse = Agent::all();
-        $agentes=DB::table('call_entry')->whereDate('datetime_entry_queue', today())->count();
+        $total_chamada_dia=DB::table('call_entry')->whereDate('datetime_entry_queue', today())->count();
+        $total_lost_dia=DB::table('call_entry')
+         ->where('status','abandonada')
+         ->whereDate('datetime_entry_queue', today())->count();
 
         $chart = new DashboardChart;
-        $today_users = User::whereDate('created_at', today())->count();
-        $yesterday_users = User::whereDate('created_at', today()->subDays(5000))->count();
-        $users_2_days_ago = User::whereDate('created_at', today()->subDays(2))->count();
-        $chart->labels(['2 days ago', 'Yesterday', 'Today']);
-        $chart->dataset('My dataset', 'line', [$agentes, $yesterday_users, $today_users]);
+        // $today_users = User::whereDate('created_at', today())->count();
+        // $yesterday_users = User::whereDate('created_at', today()->subDays(5000))->count();
+        // $users_2_days_ago = User::whereDate('created_at', today()->subDays(2))->count();
+
+
+        // $chart->options(['color' => '#43D636']);
 
 
         // $chart->labels(['2 days ago', 'Yesterday', 'Today']);
         // $chart->dataset('My dataset', 'line', [1, 2, 3, 4]);
         // $chart->dataset('My dataset 1', 'line', collect([2, 3, 4, 5]));
 
-      //  $chart = "teste";
+      //  teste
+
+
+
+      ///  $chart->labels(['Chamadas Hoje']);
+        $chart->dataset('Chamadas Atendida', 'bar', [$total_chamada_dia])->backgroundcolor('green');
+        $chart->dataset('Chamadas Abandonadas', 'bar', [$total_lost_dia])->backgroundcolor('red');
+        $chart->labels(["Chamadas hoje"]);
+
         return view('dashboard',compact('agentes','chart'));
          //return view('dashboard', ['chart' => $chart]);
 
