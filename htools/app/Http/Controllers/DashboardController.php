@@ -6,6 +6,7 @@ use sistemaLaravel\Dashboard;
 use sistemaLaravel\Charts\DashboardChart;
 use sistemaLaravel\User;
 use DB;
+use Charts;
 
 
 
@@ -48,6 +49,37 @@ class DashboardController extends Controller
       //   ->select('usuario.name as nome')
       //   ->whereDate('datetime_entry_queue',today())->count();
 
+
+
+
+
+
+
+      ////CHART MES
+      $total_chamada_mes=DB::table('call_entry')
+          ->whereMonth('datetime_entry_queue','=', date('m'))
+          ->whereYear('datetime_entry_queue','=', date('Y'))
+          ->count();
+      $total_lost_mes=DB::table('call_entry')
+       ->where('status','abandonada')
+       ->whereMonth('datetime_entry_queue','=', date('m'))
+       ->whereYear('datetime_entry_queue','=', date('Y'))
+       ->count();
+
+        $chartline = new DashboardChart;
+        $chartline->dataset('Recebidas', 'bar', [$total_chamada_mes])->backgroundcolor('green');
+        $chartline->dataset('Abandonadas', 'bar', [$total_lost_mes])->backgroundcolor('red');
+        $chartline->labels(["Chamadas Mês"]);
+
+
+
+
+
+
+
+      /////////////////////////
+
+
       $chamadas=DB::table('call_entry as chamadas')
       ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
         ->select('usuario.name as nome')
@@ -60,16 +92,17 @@ class DashboardController extends Controller
         $chart->dataset('Chamadas Abandonadas', 'bar', [$total_lost_dia])->backgroundcolor('red');
         $chart->labels(["Chamadas hoje"]);
 
-        $chartline = new DashboardChart;
+
         $teste =  'name';
         // var_dump($chamadas);
         foreach($chamadas as  $chave => $valor){
-            echo ('<div>testetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteste'.$chave.'</div><br>');
+            echo ('<div>testetestettestetestetestettestetestetesteteste'.$chave.date('m').'</div><br>');
+
 
 
         }
 
-         $chartline->dataset($teste, 'bar', [$total_chamada_dia])->backgroundcolor('blue');
+
 
         // for ($i = 1; $i <= 2; $i++) {
         //     if ($i == 1) {
@@ -80,9 +113,19 @@ class DashboardController extends Controller
         //       }
         //
         //   }
-        $chartline->labels(["Chamadas hoje"]);
 
-        return view('dashboard',compact('agentes','chart', 'chartline'));
+        $users = User::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))
+            				->get();
+                $chart2 = Charts::database($users, 'bar', 'highcharts')
+        			      ->title("Monthly new Register Users")
+        			      ->elementLabel("Total Users")
+        			      ->dimensions(1000, 500)
+        			      ->responsive(false)
+        			      ->groupByMonth(date('Y'), true);
+
+
+
+        return view('dashboard',compact('agentes','chart', 'chartline','chart2'));
          //return view('dashboard', ['chart' => $chart]);
 
     }

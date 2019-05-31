@@ -1,22 +1,50 @@
 @extends('layouts.admin')
 @section('conteudo')
 
-<div class="row">
-      
-          <!-- Custom tabs (Charts with tabs)-->
-          <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-            {!! $chart->container() !!}
-            {!! $chart->script() !!}
-          </div>
-          <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-            {!! $chartline->container() !!}
-            {!! $chartline->script() !!}
-          </div>
-
-             </div>
 
 
-            <!-- /.row -->
+   <div class="row">
+       <div class="col-md-6">
+           <div class="panel panel-default">
+
+               <div class="panel-body">
+                 {!! $chartline->container() !!}
+                 {!! $chartline->script() !!}
+               </div>
+           </div>
+       </div>
+
+       <div class="col-md-6">
+           <div class="panel panel-default">
+
+               <div class="panel-body">
+                 {!! $chart->container() !!}
+                 {!! $chart->script() !!}
+               </div>
+           </div>
+       </div>
+
+   </div>
+
+   <div class="col-md-6">
+       <div class="panel panel-default">
+
+           <div class="panel-body">
+
+             {!! $chart2->container() !!}
+             {!! $chart2->script() !!}
+
+           </div>
+       </div>
+   </div>
+
+</div>
+
+
+
+
+
+
 
 
 
