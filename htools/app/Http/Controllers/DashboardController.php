@@ -34,6 +34,7 @@ class DashboardController extends Controller
 
       ////CHART MES
       $total_chamada_mes=DB::table('call_entry')
+          ->where('status','terminada')
           ->whereMonth('datetime_entry_queue','=', date('m'))
           ->whereYear('datetime_entry_queue','=', date('Y'))
           ->count();
@@ -64,6 +65,7 @@ class DashboardController extends Controller
       ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
         //->select('usuario.name')
         ->select(DB::raw('count(usuario.name) as qtd, usuario.name'))
+        ->where('status','terminada')
         ->whereMonth('datetime_entry_queue','=', date('m'))
         ->whereYear('datetime_entry_queue','=', date('Y'))
         //->whereDate('datetime_entry_queue',today())
@@ -96,6 +98,7 @@ class DashboardController extends Controller
               ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
                 //->select('usuario.name')
                 ->select(DB::raw('count(usuario.name) as qtd, usuario.name'))
+                ->where('status','terminada')
                 ->whereDate('datetime_entry_queue',today())
                 ->groupBy('name')
                 ->get();
