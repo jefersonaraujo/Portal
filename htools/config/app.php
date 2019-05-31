@@ -237,7 +237,9 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
       //  'Charts' => ConsoleTVs\Charts\Charts::class,
-        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        //'Charts' => ConsoleTVs\Charts\Charts::class,
+        'Charts' => ConsoleTVs\Charts\Charts::class,
+
         'PDF' => Barryvdh\DomPDF\Facade::class,
 
 

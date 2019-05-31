@@ -30,7 +30,6 @@
        <div class="panel panel-default">
 
            <div class="panel-body">
-
              {!! $chart2->container() !!}
              {!! $chart2->script() !!}
 
