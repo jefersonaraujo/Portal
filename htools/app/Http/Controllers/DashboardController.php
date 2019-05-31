@@ -64,14 +64,18 @@ class DashboardController extends Controller
       ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
         //->select('usuario.name')
         ->select(DB::raw('count(usuario.name) as qtd, usuario.name'))
-        ->whereDate('datetime_entry_queue',today())
+        ->whereMonth('datetime_entry_queue','=', date('m'))
+        ->whereYear('datetime_entry_queue','=', date('Y'))
+        //->whereDate('datetime_entry_queue',today())
         ->groupBy('name')
         ->get();
 
 
 
         $chart2 = new DashboardChart;
-        $chart->labels(["Chamadas hojeXOperador"]);
+        $chart2->labels(["Chamadas hojeXOperador"]);
+        $background_colors = array('blue', 'green', 'red', 'yellow','pink','gray','black');
+        $count = count($background_colors) - 1;
 
 
 
@@ -79,17 +83,46 @@ class DashboardController extends Controller
 
         // var_dump($chamadas);
         foreach($chamadas as  $chave => $valor){
-
-            $chart2->dataset($valor->name, 'bar', [$valor->qtd])->backgroundcolor('green');
+          $i = rand(0, $count);
+          $rand_background = $background_colors[$i];
+            $chart2->dataset($valor->name, 'bar', [$valor->qtd])->backgroundcolor($rand_background);
 
         }
 
 
 
 
+              $chamadas2=DB::table('call_entry as chamadas')
+              ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
+                //->select('usuario.name')
+                ->select(DB::raw('count(usuario.name) as qtd, usuario.name'))
+                ->whereDate('datetime_entry_queue',today())
+                ->groupBy('name')
+                ->get();
+
+
+
+                $chart3 = new DashboardChart;
+                $chart3->labels(["Chamadas hojeXOperador"]);
+
+
+
+
+
+                // var_dump($chamadas);
+                foreach($chamadas2 as  $chave => $valor){
+                  $i = rand(0, $count);
+                  $rand_background = $background_colors[$i];
+                    $chart3->dataset($valor->name, 'bar', [$valor->qtd])->backgroundcolor($rand_background);
+
+                }
+
+
+
+
 //////////////////////
 
-        return view('dashboard',compact('agentes','chart', 'chartline','chart2'));
+        return view('dashboard',compact('agentes','chart', 'chartline','chart2','chart3'));
          //return view('dashboard', ['chart' => $chart]);
 
     }

@@ -37,6 +37,17 @@
        </div>
    </div>
 
+
+   <div class="col-md-6">
+       <div class="panel panel-default">
+
+           <div class="panel-body">
+             {!! $chart3->container() !!}
+             {!! $chart3->script() !!}
+
+           </div>
+       </div>
+   </div>
 </div>
 
 
