@@ -76,7 +76,7 @@ class DashboardController extends Controller
 
         $chart2 = new DashboardChart;
         $chart2->labels(["Chamadas hojeXOperador"]);
-        $background_colors = array('blue', 'green', 'red', 'yellow','pink','gray','black');
+        $background_colors = array('blue', 'green', 'red', 'yellow','pink','gray','black','purple','black');
         $count = count($background_colors) - 1;
 
 
@@ -194,5 +194,10 @@ class DashboardController extends Controller
     public function destroy(Dashboard $dashboard)
     {
         //
+    }
+
+
+    public function buildChart(){
+
     }
 }
