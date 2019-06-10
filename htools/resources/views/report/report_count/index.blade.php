@@ -24,24 +24,17 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 
 				<thead>
-					<th>Agent</th>
-					<th>Telefone</th>
-          <th>inicial</th>
-          <th>final</th>
-          <th>duração</th>
-          <th>status</th>
-          <th>wait</th>
+					<th>DIA</th>
+					<th>STATUS</th>
+          <th>COUNT</th>
 
 				</thead>
         @foreach ($cham as $call)
         <tr>
-          <td>{{ $call->nome}}</td>
-          <td>{{ $call->telefone}}</td>
-          <td>{{ $call->inicio}}</td>
-          <td>{{ $call->fim}}</td>
-          <td>{{ $call->duracao}}</td>
+          <td>{{ $call->dia}}</td>
           <td>{{ $call->status}}</td>
-          <td>{{ $call->espera}}</td>
+          <td>{{ $call->qtd}}</td>
+
 
 
         </tr>

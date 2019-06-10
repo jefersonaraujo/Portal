@@ -1,4 +1,4 @@
-{!!Form::open(array('url'=>'report/report_agent', 'method'=>'GET', 'autocomplete'=>'off', 'role' => 'search'))!!}
+{!!Form::open(array('url'=>'report/report_count', 'method'=>'GET', 'autocomplete'=>'off', 'role' => 'search'))!!}
 
 <div class="row">
 	<div class="col-md-6">

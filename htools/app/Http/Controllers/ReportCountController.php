@@ -23,14 +23,15 @@ class ReportCountController extends Controller
         $query=trim($request->get('searchText'));
         $to=trim($request->get('to'));
         $from=trim($request->get('from'));
-        $chamadas=DB::table('call_entry as chamadas')
-        ->join('agent as usuario', 'usuario.id', '=','chamadas.id_agent')
-          ->select('usuario.name as nome','chamadas.callerid as telefone', 'chamadas.datetime_init as inicio', 'chamadas.datetime_end as fim' ,'chamadas.duration as duracao','chamadas.status as status', 'chamadas.duration_wait as espera')
+        $chamadas=DB::table('call_entry')
+        ->select(DB::raw('count(status) as qtd, status, datetime_entry_queue as dia'))
             ->whereBetween('datetime_entry_queue',array($from,$to))
-            ->where('callerid','LIKE', '%'.$query.'%')
-        //->orwhere('status','LIKE', '%'.$query.'%')
+            ->groupBy('datetime_entry_queue','status')->get();
+            //->orderBy('datetime_entry_queue', 'desc')->get();
+        //     ->where('callerid','LIKE', '%'.$query.'%')
+        // //->orwhere('status','LIKE', '%'.$query.'%')
 
-        ->orderBy('datetime_init', 'desc')->get();
+
         //->get();
         //->paginate(10);
 
